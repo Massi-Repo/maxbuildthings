@@ -1,0 +1,8 @@
+# Su Vercel va solo la vetrina: note interne e strumenti restano nel repo, non sul sito
+CLAUDE.md
+STATO.md
+README.md
+profilo-github/
+strumenti/
+screenshot/
+node_modules/
