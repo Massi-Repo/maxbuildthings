@@ -291,6 +291,8 @@ body.aesthetic .page,body.aesthetic .scene,body.aesthetic .kata{animation:hue 5s
 #vis{width:64px;height:14px;background:#000;box-shadow:inset 1px 1px var(--win-dk);display:block}
 /* l'indicatore della lingua di Windows: riquadro blu, un clic e cambia (resta anche sul telefono) */
 .tray .lingua{background:var(--title-a);color:#fff;padding:2px 4px 1px;font-size:16px;letter-spacing:.04em;box-shadow:inset -1px -1px rgba(0,0,0,.35),inset 1px 1px rgba(255,255,255,.35)}
+.tray .lingua{position:relative}
+.tray .lingua::after{content:"";position:absolute;inset:-12px -6px}   /* sul telefono il dito trova un bersaglio piu' grande del bottone */
 .tray .lingua:hover,.tray .lingua:focus-visible{background:var(--pink);outline:0}
 @media (max-width:560px){#vis{display:none}}
 
@@ -731,9 +733,9 @@ Lavoro:  <a href="https://pezzanera.it/" target="_blank" rel="noopener">pezzaner
     'Carico vaporwave.sys...':'Loading vaporwave.sys..', 'Carico maxamp.drv......':'Loading maxamp.drv.....', 'Carico vaporgl.dll.....':'Loading vaporgl.dll....', '(bloom attivo)':'(bloom on)',
     'Avvio MAXBUILDTHINGS.EXE_':'Starting MAXBUILDTHINGS.EXE_', 'clicca per saltare':'click to skip',
     // hero
-    'Tecnico e developer. Di giorno costruisco':'IT technician and developer in Italy. By day I build',
+    'Tecnico e developer. Di giorno costruisco':'Technician and developer in Italy. By day I build',
     'strumenti per la ristorazione':'tools for restaurants',
-    'a Pezzanera, siti per chi me li chiede e app per le persone che ho intorno.':'at Pezzanera; on the side, websites for whoever asks and apps for the people around me.',
+    'a Pezzanera, siti per chi me li chiede e app per le persone che ho intorno.':'at Pezzanera; on the side, websites for anyone who asks and apps for the people around me.',
     "Qui sotto c'è la mia scrivania: ogni finestra è un progetto. Premi ▶ in basso a destra.":'Below is my desk: every window is a project. Hit ▶ in the bottom right corner.',
     'progetti':'projects', 'e siti':'& sites', 'ti serve un sito?':'need a website?', 'scrivimi':'email me',
     'mailto:massi.cc@proton.me?subject=Ciao%20Max%2C%20ho%20visto%20maxbuildthings':'mailto:massi.cc@proton.me?subject=Hi%20Max%2C%20I%20saw%20maxbuildthings',
