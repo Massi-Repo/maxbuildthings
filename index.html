@@ -6,6 +6,14 @@
 <meta name="description" content="Max, tecnico e developer in Umbria: siti e web app per attività e ristoranti, strumenti per la cassa, app personali. Pibreria, cantkeep, La Mora, CassaZen e altri, su un desktop vaporwave anni '90.">
 <meta name="theme-color" content="#140536">
 <link rel="canonical" href="https://maxbuildthings.com/">
+<link rel="alternate" hreflang="it" href="https://maxbuildthings.com/?lang=it">
+<link rel="alternate" hreflang="en" href="https://maxbuildthings.com/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://maxbuildthings.com/">
+<!-- lingua: ?lang= > scelta salvata > lingua del browser (it -> italiano, il resto -> inglese). In inglese la pagina resta
+     nascosta finche' lo script della lingua (in fondo al body) non ha tradotto, cosi' non lampeggia l'italiano -->
+<script>(function(){var l,h=document.documentElement;try{l=new URLSearchParams(location.search).get("lang");if(l!=="it"&&l!=="en")l=localStorage.getItem("lingua")}catch(e){}
+if(l!=="it"&&l!=="en")l=/^it\b/i.test((navigator.languages&&navigator.languages[0])||navigator.language||"it")?"it":"en";
+h.lang=l;if(l==="en"){h.classList.add("in-traduzione");setTimeout(function(){h.classList.remove("in-traduzione")},4000)}})();</script>
 <meta property="og:title" content="maxbuildthings — Max costruisce cose">
 <meta property="og:description" content="Siti, web app e strumenti per chi lavora davvero. Apri le finestre, guarda i progetti, scrivimi.">
 <meta property="og:type" content="website">
@@ -20,7 +28,7 @@
 <meta name="twitter:image" content="https://maxbuildthings.com/og.jpg">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Max","url":"https://maxbuildthings.com/","email":"mailto:massi.cc@proton.me","jobTitle":"Tecnico e developer","worksFor":{"@type":"Organization","name":"Pezzanera Office","url":"https://pezzanera.it/"},"address":{"@type":"PostalAddress","addressLocality":"Marsciano","addressRegion":"PG","addressCountry":"IT"},"sameAs":["https://github.com/Massi-Repo"]}</script>
 <link rel="icon" id="fav" type="image/svg+xml" href="favicon.svg" data-alt="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%23140536%22%2F%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2234%22%20r%3D%2216%22%20fill%3D%22%23ffd36e%22%2F%3E%3Crect%20x%3D%220%22%20y%3D%2238%22%20width%3D%2264%22%20height%3D%224%22%20fill%3D%22%23140536%22%2F%3E%3Crect%20x%3D%220%22%20y%3D%2246%22%20width%3D%2264%22%20height%3D%223%22%20fill%3D%22%23140536%22%2F%3E%3Cpath%20d%3D%22M0%2048h64M4%2064l14-16M22%2064l7-16M42%2064l-7-16M60%2064L46%2048%22%20stroke%3D%22%23ff5fc1%22%20stroke-width%3D%221.5%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E">
-<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}</style>
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}html.in-traduzione body{visibility:hidden}</style>
 <title>maxbuildthings — Max costruisce siti, app e strumenti</title>
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="manifest.webmanifest">
@@ -281,7 +289,10 @@ body.aesthetic .page,body.aesthetic .scene,body.aesthetic .kata{animation:hue 5s
 .tray #amp{font-weight:bold;letter-spacing:.04em}
 .tray #amp[aria-pressed="true"]{color:#c4007a}
 #vis{width:64px;height:14px;background:#000;box-shadow:inset 1px 1px var(--win-dk);display:block}
-@media (max-width:560px){.tray .it,#vis{display:none}}
+/* l'indicatore della lingua di Windows: riquadro blu, un clic e cambia (resta anche sul telefono) */
+.tray .lingua{background:var(--title-a);color:#fff;padding:2px 4px 1px;font-size:16px;letter-spacing:.04em;box-shadow:inset -1px -1px rgba(0,0,0,.35),inset 1px 1px rgba(255,255,255,.35)}
+.tray .lingua:hover,.tray .lingua:focus-visible{background:var(--pink);outline:0}
+@media (max-width:560px){#vis{display:none}}
 
 .startmenu,.ctx{position:fixed;z-index:31;background:var(--win-face);color:var(--win-ink);padding:3px;display:flex;box-shadow:inset -1px -1px var(--win-dk),inset 1px 1px var(--win-hi),inset -2px -2px var(--win-sh),inset 2px 2px var(--win-lt),6px 8px 0 rgba(7,2,26,.55)}
 .startmenu{left:max(16px,env(safe-area-inset-left,0px));bottom:calc(var(--taskbar-h) + env(safe-area-inset-bottom,0px) + 2px);width:min(300px,calc(100vw - 32px))}
@@ -641,6 +652,7 @@ Lavoro:  <a href="https://pezzanera.it/" target="_blank" rel="noopener">pezzaner
     <li><button type="button" data-player-open><span class="ico">♫</span>MAXAMP</button></li>
     <li><a href="https://github.com/Massi-Repo" target="_blank" rel="noopener" data-close><span class="ico">⌥</span>GitHub ↗</a></li>
     <li><a href="https://pezzanera.it/" target="_blank" rel="noopener" data-close><span class="ico">⌂</span>Pezzanera ↗</a></li>
+    <li><button type="button" data-lingua><span class="ico">⇄</span>English</button></li>
     <li class="sep"></li>
     <li><button type="button" id="restoreAll"><span class="ico">▣</span>Riapri e riordina le finestre</button></li>
     <li><button type="button" id="saverBtn"><span class="ico">✶</span>Screensaver</button></li>
@@ -667,7 +679,7 @@ Lavoro:  <a href="https://pezzanera.it/" target="_blank" rel="noopener">pezzaner
   <button class="btn start" type="button" id="startBtn" aria-expanded="false" aria-controls="startmenu">▶ Avvio</button>
   <span class="sep"></span>
   <div class="tasks" id="tasks"></div>
-  <span class="tray"><button type="button" id="amp" aria-pressed="false" aria-label="Musica: maxamp" title="maxamp — lo-fi generato al volo">▶ MAXAMP</button><canvas id="vis" width="64" height="14" aria-hidden="true"></canvas><span class="it">IT</span><span id="clock">--:--</span></span>
+  <span class="tray"><button type="button" id="amp" aria-pressed="false" aria-label="Musica: maxamp" title="maxamp — lo-fi generato al volo">▶ MAXAMP</button><canvas id="vis" width="64" height="14" aria-hidden="true"></canvas><button type="button" class="lingua" data-lingua aria-label="Lingua: italiano. Passa all'inglese" title="Lingua: italiano. Passa all'inglese">IT</button><span id="clock">--:--</span></span>
 </div>
 
 <div class="win fixedwin dragable" id="player" hidden aria-label="MAXAMP">
@@ -701,6 +713,153 @@ Lavoro:  <a href="https://pezzanera.it/" target="_blank" rel="noopener">pezzaner
 <canvas id="saver" hidden></canvas>
 
 <script>
+/* ---------- lingua IT/EN: l'HTML e' in italiano; qui il dizionario inglese. Chiave = testo italiano di un nodo o di un attributo (senza spazi ai bordi).
+   Se cambi un testo italiano, cambia anche la sua chiave qui: controlla.mjs segnala l'italiano rimasto nella versione inglese. ---------- */
+(function(){
+  var fw=function(s){ return s.replace(/[!-~]/g,function(c){ return String.fromCharCode(c.charCodeAt(0)+0xFEE0); }).replace(/ /g,'\u3000'); };   // testo a larghezza piena, come nella scritta che scorre
+  var EN={
+    // testa della pagina
+    'maxbuildthings — Max costruisce siti, app e strumenti':'maxbuildthings — Max builds websites, apps and tools',
+    "Max, tecnico e developer in Umbria: siti e web app per attività e ristoranti, strumenti per la cassa, app personali. Pibreria, cantkeep, La Mora, CassaZen e altri, su un desktop vaporwave anni '90.":"Max is an IT technician and developer in Umbria, Italy: websites and web apps for small businesses and restaurants, POS tools, personal apps. Pibreria, cantkeep, La Mora, CassaZen and more, on a '90s vaporwave desktop.",
+    'maxbuildthings — Max costruisce cose':'maxbuildthings — Max builds things',
+    'Siti, web app e strumenti per chi lavora davvero. Apri le finestre, guarda i progetti, scrivimi.':'Websites, web apps and tools for people who actually work. Open the windows, look around, drop me a line.',
+    'it_IT':'en_US',
+    'MAX BUILD THINGS in cromo su un tramonto vaporwave, con finestre stile Windows 98':'MAX BUILD THINGS in chrome over a vaporwave sunset, with Windows 98 style windows',
+    // avvio
+    'Memoria: 640K':'Memory: 640K', '(abbastanza per chiunque)':'(ought to be enough for anybody)',
+    'Rilevo progetti........':'Detecting projects.....', '11 trovati':'11 found',
+    'Carico vaporwave.sys...':'Loading vaporwave.sys..', 'Carico maxamp.drv......':'Loading maxamp.drv.....', 'Carico vaporgl.dll.....':'Loading vaporgl.dll....', '(bloom attivo)':'(bloom on)',
+    'Avvio MAXBUILDTHINGS.EXE_':'Starting MAXBUILDTHINGS.EXE_', 'clicca per saltare':'click to skip',
+    // hero
+    'Tecnico e developer. Di giorno costruisco':'IT technician and developer in Italy. By day I build',
+    'strumenti per la ristorazione':'tools for restaurants',
+    'a Pezzanera, siti per chi me li chiede e app per le persone che ho intorno.':'at Pezzanera; on the side, websites for whoever asks and apps for the people around me.',
+    "Qui sotto c'è la mia scrivania: ogni finestra è un progetto. Premi ▶ in basso a destra.":'Below is my desk: every window is a project. Hit ▶ in the bottom right corner.',
+    'progetti':'projects', 'e siti':'& sites', 'ti serve un sito?':'need a website?', 'scrivimi':'email me',
+    'mailto:massi.cc@proton.me?subject=Ciao%20Max%2C%20ho%20visto%20maxbuildthings':'mailto:massi.cc@proton.me?subject=Hi%20Max%2C%20I%20saw%20maxbuildthings',
+    '★ INCASSA — IN SVILUPPO':'★ INCASSA — IN DEVELOPMENT',
+    // barra dei filtri e cartelle
+    'Filtri':'Filters', 'Visualizza:':'View:', 'Tutto':'All', 'App e software':'Apps & software', 'Siti web':'Websites', 'Percorso:':'Address:',
+    'C:\\MAX\\PROGETTI':'C:\\MAX\\PROJECTS', 'Progetti online':'Live projects', 'Cartella in lavorazione':'Work in progress folder',
+    'C:\\MAX\\IN_LAVORAZIONE':'C:\\MAX\\IN_PROGRESS', "▲ roba non ancora finita":"▲ stuff that isn't finished yet", 'Progetti in lavorazione':'Projects in progress',
+    // finestre: parti comuni
+    'Riduci a icona':'Minimize', 'Ingrandisci':'Maximize', 'Chiudi':'Close', 'Chiudi e ferma':'Close and stop',
+    'Dal':'Since', 'Nota':'Note', 'Stato':'Status', 'Apri ↗':'Open ↗', 'Prenota ↗':'Book ↗',
+    'personale':'personal', 'cliente':'client', 'IN USO':'IN USE', 'IN SVILUPPO':'IN DEVELOPMENT',
+    'HTML statico · marchio Pezzanera':'Static HTML · a Pezzanera brand',
+    // Pibreria
+    'Lo scaffale di Pibreria: 32 libri in fila con le copertine in tre dimensioni, 8 letti, 1 in lettura, 23 da leggere':'The Pibreria bookshelf: 32 books in a row with 3D covers, 8 read, 1 in progress, 23 to read',
+    "La libreria digitale della Pi. Uno scaffale tridimensionale da sfogliare, schede libro con voti a mezze stelle e recensioni scritte come su Note, una wishlist dei libri da comprare col totale in fondo. Le copertine arrivano da sole da Apple Books.":"Pi's digital library. A 3D bookshelf to browse, book cards with half-star ratings and reviews written like in Notes, and a wishlist of books to buy with the total at the bottom. Covers show up on their own from Apple Books.",
+    '«I tuoi libri, finalmente in ordine.»':'“Your books, finally in order.”',
+    'oggi è privata; una versione pubblica con le recensioni sta arrivando':'private for now; a public version with reviews is on the way',
+    // cantkeep
+    "cantkeep su telefono: logo, la frase 'niente resta. tutto conta.' e i bottoni per creare il proprio nome o entrare":"cantkeep on a phone: the logo, the line 'nothing stays. everything counts.' and the buttons to pick a name or sign in",
+    "Un social al contrario: tutto succede adesso e non resta niente. Niente archivio, niente scroll infinito all'indietro. Se vuoi vedere, devi esserci. Ti scegli un nome e un colore, segui chi ti pare, scrivi quello che ti passa per la testa alle tre di notte.":"A social network in reverse: everything happens now and nothing stays. No archive, no endless scrolling back. If you want to see it, you have to be there. Pick a name and a color, follow whoever you like, post whatever crosses your mind at 3 a.m.",
+    '«niente resta. tutto conta.»':'“nothing stays. everything counts.”',
+    'HTML e JS senza framework · mobile-first · Cloudflare':'Plain HTML & JS, no framework · mobile-first · Cloudflare',
+    // La Mora
+    "Home del sito La Mora Affittacamere: il palazzo d'epoca a Tuoro sul Trasimeno e i bottoni Verifica disponibilità e Scrivici su WhatsApp":"La Mora Affittacamere home page: the historic building in Tuoro sul Trasimeno and the Check availability and WhatsApp us buttons",
+    "Sito per un affittacamere in un palazzo d'epoca a Tuoro sul Trasimeno: quattro camere, quattro colori. Prenotazione in due passi con pagamento online, calendario sincronizzato via iCal con Booking e gli altri portali, versione inglese. Prima si prenotava su WhatsApp.":"Website for a guesthouse in a historic building in Tuoro, on Lake Trasimeno: four rooms, four colors. Two-step booking with online payment, a calendar synced over iCal with Booking.com and the other portals, English version included. Before, bookings went through WhatsApp.",
+    '«Scegli le date, paghi in un minuto. Alla camera pensiamo noi.»':"“Pick your dates, pay in a minute. We'll take care of the room.”",
+    'HTML statico · Stripe · iCal · Vercel':'Static HTML · Stripe · iCal · Vercel',
+    // pezzanera.it
+    'Home di pezzanera.it: il logo dei 50 anni e il titolo Tecnologia, sicurezza e software gestionali per le aziende':'pezzanera.it home page: the 50th anniversary logo and the headline Technology, security and business software for companies',
+    "Il sito di Pezzanera Office, artigiani dell'innovazione dal 1976: gestionali Zucchetti e sistemi di cassa, reti, cybersecurity, centralini e Microsoft 365. È il sito-madre da cui partono i marchi verticali, ognuno col suo dominio. Chat di assistenza e gestione del consenso scritte a mano, senza plugin.":"The website of Pezzanera Office, craftsmen of innovation since 1976: Zucchetti business software and POS systems, networks, cybersecurity, phone systems and Microsoft 365. It's the parent site the vertical brands branch off from, each with its own domain. Support chat and cookie consent written by hand, no plugins.",
+    'HTML statico · JS fatto in casa':'Static HTML · homemade JS',
+    // CassaZen
+    'Home di cassazen.it: Registratori telematici e sistemi di cassa in Umbria, senza pensieri, con uno scontrino disegnato':'cassazen.it home page: fiscal cash registers and POS systems in Umbria, worry-free, with a drawn receipt',
+    "Registratori telematici e sistemi di cassa per negozi, bar e ristoranti: installazione, attivazione con l'Agenzia delle Entrate, verifiche periodiche, assistenza. Il sito ha uno scontrino che si stampa da solo in home.":"Fiscal cash registers and POS systems for shops, bars and restaurants: installation, activation with the Italian Revenue Agency, periodic inspections, support. The home page has a receipt that prints itself.",
+    '«Senza pensieri.»':'“Worry-free.”',
+    // CassaSicura
+    'Home di cassasicura.it: Il contante al sicuro da errori, furti e germi, con la cassa automatica Cashlogy':'cassasicura.it home page: cash kept safe from mistakes, theft and germs, with the Cashlogy automatic cash machine',
+    "Cassa automatica rendiresto Cashlogy: la macchina incassa, verifica ogni banconota e dà il resto esatto al posto dell'operatore. Vendita, installazione e assistenza per bar, negozi, farmacie e ristoranti. Nero e oro, perché di soldi si parla.":"Cashlogy automatic cash machines: the machine takes the money, checks every banknote and gives exact change, so the cashier doesn't have to. Sales, installation and support for bars, shops, pharmacies and restaurants. Black and gold, because we're talking money.",
+    '«Il contante al sicuro da errori, furti e germi.»':'“Cash, safe from mistakes, theft and germs.”',
+    // StudiOperativo
+    "Home di studioperativo.it: il titolo Il vostro studio, operativo tutto l'anno e il quadrante della conversione con le otto fasi completate":"studioperativo.it home page: the headline Your practice, up and running all year round, and the switchover dial with all eight phases complete",
+    "Il marchio di Pezzanera per commercialisti e consulenti del lavoro: il gestionale GIS di Ranocchi installato e tenuto aggiornato, i dati portati dal programma di prima, le persone formate sulle pratiche vere. In home un quadrante animato segue la conversione dello studio in otto fasi, dal sopralluogo al giorno in cui si parte davvero.":"Pezzanera's brand for accountants and payroll consultants: the GIS practice software by Ranocchi, installed and kept up to date, data carried over from the old program, people trained on real cases. On the home page an animated dial follows the practice's switchover in eight phases, from the first visit to the day it really goes live.",
+    '«Il software è GIS. Tutto il resto siamo noi.»':'“The software is GIS. Everything else is us.”',
+    // ReteVeloce
+    'Reti cablate e Wi-Fi, server e postazioni, firewall e backup, posta e Microsoft 365: progettazione, installazione e assistenza con un referente solo. Quarto marchio Pezzanera.':"Wired and Wi-Fi networks, servers and workstations, firewalls and backups, email and Microsoft 365: design, installation and support with one single contact person. Pezzanera's fourth brand.",
+    "«La rete dell'azienda, fatta per non pensarci più.»":'“Your company network, built so you never have to think about it again.”',
+    // laboratorio
+    'Strumenti interni':'Internal tools', '(niente link, girano in ufficio)':'(no links, they run in the office)',
+    "Ordinazione dal tavolo per i ristoranti all-you-can-eat: le comande entrano dritte nel software di cassa e finiscono in cucina.":"Order-from-the-table for all-you-can-eat restaurants: orders go straight into the POS software and on to the kitchen.",
+    "Controlla da solo lo stato di fiscalizzazione di centinaia di registratori telematici sul portale dell'Agenzia delle Entrate e lo riporta nel CRM.":"Checks the fiscal status of hundreds of cash registers on the Italian Revenue Agency portal by itself, and reports it back to the CRM.",
+    "Trova le stampanti comande in rete e cambia loro IP, Wi-Fi e password, anche quando il tool del produttore si arrende.":"Finds kitchen printers on the network and changes their IP, Wi-Fi and password, even when the manufacturer's own tool gives up.",
+    'Assistente AI per il team: risponde su clienti, ticket e procedure interne pescando dal CRM e dalla base di conoscenza.':'AI assistant for the team: answers questions about customers, tickets and internal procedures, drawing on the CRM and the knowledge base.',
+    "Python · Node · Supabase · un po' di tutto":'Python · Node · Supabase · a bit of everything',
+    // chi_sono.txt
+    'Modifica':'Edit', 'Formato':'Format',
+    "Max.\nTecnico e developer a Pezzanera Office, Marsciano (PG):\nPOS, registratori telematici e IT per la ristorazione.\n\nCostruisco strumenti interni, siti e web app per i clienti,\nautomazioni che fanno risparmiare giri a vuoto.\nLaurea in psicologia, poi il codice: mi interessa più\nchi usa la cosa che la cosa.\n\nNel tempo libero faccio app per le persone a cui voglio bene.\n\nTi serve un sito, o quello che hai non ti somiglia più?\nLo faccio io, dall'idea alla messa online:\nveloce, fatto a mano, senza cookie.\nAnche app e strumenti per il lavoro di tutti i giorni.\nScrivimi. Rispondo io, non un modulo.\n\nEmail:":
+      "Max.\nIT technician and developer at Pezzanera Office,\nMarsciano (Umbria, Italy): POS systems, fiscal cash\nregisters and IT for restaurants.\n\nI build internal tools, websites and web apps for clients,\nautomations that save people pointless back-and-forth.\nPsychology degree first, then code: I care more about\nthe person using the thing than the thing itself.\n\nIn my spare time I make apps for the people I love.\n\nNeed a website, or does yours no longer feel like you?\nI'll build it, from the first idea to going live:\nfast, handmade, cookie-free.\nApps and tools for everyday work, too.\nWrite to me. You get me, not a contact form.\n\nEmail:",
+    'Lavoro:':'Work:  ',
+    // InCassa
+    'In costruzione':'Under construction', 'Tavolo 7 · 2 coperti':'Table 7 · 2 guests', 'senza pepe':'no pepper', '2× Acqua 0,75':'2× Water 0,75', 'TOTALE':'TOTAL',
+    '(nome provvisorio)':'(working title)',
+    "Software di cassa per la ristorazione, pensato da dietro il banco. Comande personalizzabili fino all'ultima riga, funziona anche senza internet, palmari per la sala, fatturazione elettronica, prenotazioni tavoli. Semplice per chi vuole poco, profondo per chi vuole tutto: un'unica impostazione, non due livelli.":"POS software for restaurants, designed from behind the counter. Kitchen tickets customizable down to the last line, works without internet, handhelds for the floor staff, e-invoicing, table bookings. Simple for those who need little, deep for those who want it all: one single setup, not two tiers.",
+    'Windows · Android · stampanti ESC/POS e RT':'Windows · Android · ESC/POS and fiscal printers', 'set 2026':'Sep 2026',
+    "v0.6, in prova sull'hardware vero":'v0.6, being tested on real hardware', 'In arrivo':'Coming soon',
+    // fondo pagina
+    'Sei stato qui':"You've been here", 'volta':'time', 'volte':'times', 'QUASI VALIDO':'ALMOST VALID',
+    'Fatto a mano · 2026 · niente cookie, niente tracker · ottimizzato per 800×600 · tasto destro per le opzioni · ↑↑↓↓←→←→BA':'Handmade · 2026 · no cookies, no trackers · best viewed at 800×600 · right-click for options · ↑↑↓↓←→←→BA',
+    // menu Avvio, menu del tasto destro, barra in basso
+    'Menu Avvio':'Start menu', 'Progetti':'Projects', 'In lavorazione':'In progress', 'Chi sono':'About me',
+    'Riapri e riordina le finestre':'Reopen and tidy up windows', 'Riavvia…':'Restart…', 'Spegni…':'Shut down…', 'English':'Italiano',
+    'Menu contestuale':'Context menu', 'Aggiorna':'Refresh', 'Pavimento: griglia':'Floor: grid', 'Pavimento: scacchiera':'Floor: checkerboard', 'Pavimento: niente':'Floor: none',
+    '▶ Avvio':'▶ Start','Musica: maxamp':'Music: maxamp', 'maxamp — lo-fi generato al volo':'maxamp — lo-fi generated on the fly',
+    'IT':'EN', "Lingua: italiano. Passa all'inglese":'Language: English. Switch to Italian',
+    'Traccia precedente':'Previous track', 'Traccia successiva':'Next track',
+    // dialoghi, spegnimento
+    'Questo sito è ottimizzato per 800×600 e Netscape Navigator 4.0. Continuare comunque?':'This site is best viewed at 800×600 in Netscape Navigator 4.0. Continue anyway?', 'Annulla':'Cancel',
+    'È ora possibile spegnere il computer.':"It's now safe to turn off your computer.", '(oppure clicca per riaccenderlo)':'(or click to turn it back on)',
+    // testi scritti dal JavaScript (L.t)
+    'oggetto':'object', 'oggetti':'objects', 'Caricamento di':'Loading', '✓ copiato':'✓ copied', '★ maxbuildthings ★ torna qui ':'★ maxbuildthings ★ come back ',
+    'finestra spostata · doppio clic sulla sua barra per rimetterla qui':'window moved · double-click its title bar to put it back'
+  };
+  EN[fw('TASTO DESTRO = OPZIONI')]=fw('RIGHT CLICK = OPTIONS');
+  EN[fw('PREMI')+'\u3000▶\u3000'+fw('PER LA MUSICA')]=fw('PRESS')+'\u3000▶\u3000'+fw('FOR MUSIC');
+  EN['Modalità '+fw('AESTHETIC')]=fw('AESTHETIC')+' mode';
+  var REGOLE=[[/^Ingrandisci (.+)$/,'Enlarge $1'],[/^(\d+) oggett[oi]$/,function(m,n){ return n+(n==='1'?' object':' objects'); }]];
+  var ATTRIBUTI=['aria-label','alt','title','href','content'];
+
+  function cerca(t){ if(EN.hasOwnProperty(t)) return EN[t]; for(var i=0;i<REGOLE.length;i++) if(REGOLE[i][0].test(t)) return t.replace(REGOLE[i][0],REGOLE[i][1]); return null; }
+  function traduci(s){ var t=s.trim(); if(!t) return null; var en=cerca(t); if(en===null) return null; var i=s.indexOf(t); return s.slice(0,i)+en+s.slice(i+t.length); }
+
+  var voci=null;   // [nodo, attributo o null, italiano, inglese], raccolte una volta sola sul DOM italiano
+  function raccogli(){ voci=[];
+    var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:function(n){ var p=n.parentNode.nodeName; return p==='SCRIPT'||p==='STYLE'?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT; }}), n;
+    while((n=w.nextNode())){ var en=traduci(n.data); if(en!==null) voci.push([n,null,n.data,en]); }
+    document.querySelectorAll('body [aria-label],body [alt],body [title],body a[href^="mailto:"],meta[name="description"],meta[property^="og:"],meta[name^="twitter:"]').forEach(function(el){
+      ATTRIBUTI.forEach(function(a){ var v=el.getAttribute(a); if(v===null) return; var en=traduci(v); if(en!==null) voci.push([el,a,v,en]); }); });
+  }
+  var titoloIt=document.title, canon=document.querySelector('link[rel="canonical"]'), canonIt=canon&&canon.href;
+  var lingua=document.documentElement.lang==='en'?'en':'it';
+  function applica(l){ lingua=l; if(!voci) raccogli();
+    voci.forEach(function(v){ var s=l==='en'?v[3]:v[2]; if(v[1]) v[0].setAttribute(v[1],s); else v[0].data=s; });
+    document.documentElement.lang=l; document.title=l==='en'?(EN[titoloIt]||titoloIt):titoloIt;
+    if(canon && /[?&]lang=/.test(location.search)) canon.href=canonIt.split('?')[0]+'?lang='+l;
+    document.documentElement.classList.remove('in-traduzione');
+    try{ document.dispatchEvent(new CustomEvent('lingua',{detail:l})); }catch(e){}
+  }
+  window.L={
+    get lingua(){ return lingua; },
+    t:function(it){ return lingua==='en'&&EN.hasOwnProperty(it)?EN[it]:it; },
+    imposta:function(l){ try{ localStorage.setItem('lingua',l); }catch(e){}
+      try{ var u=new URL(location.href); u.searchParams.set('lang',l); history.replaceState(history.state,'',u.pathname+u.search+u.hash); }catch(e){}
+      applica(l); },
+    // per controlla.mjs: testi visibili rimasti in italiano nella versione inglese
+    mancanti:function(){ var parole=/(^|[^\wàèéìòù])(il|gli|di|che|per|non|una|sono|della|delle|con|del|nel|alla|anche|più|è|cosa|quello)(?=$|[^\wàèéìòù])/;
+      var out=[], w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT), n;
+      while((n=w.nextNode())){ var p=n.parentNode; if(p.closest('script,style,[hidden]')) continue; if(parole.test(n.data)) out.push(n.data.trim().slice(0,80)); }
+      document.querySelectorAll('[aria-label],[alt],[title]').forEach(function(el){ ['aria-label','alt','title'].forEach(function(a){ var v=el.getAttribute(a); if(v&&parole.test(v)) out.push(a+': '+v.slice(0,80)); }); });
+      return out; }
+  };
+  try{ if(lingua==='en') applica('en'); } finally { document.documentElement.classList.remove('in-traduzione'); }
+  document.addEventListener('click',function(e){ var b=e.target.closest&&e.target.closest('[data-lingua]'); if(b) L.imposta(lingua==='en'?'it':'en'); });
+})();
+</script>
+
+<script>
 (function(){
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var fine = window.matchMedia('(pointer: fine)').matches;
@@ -708,6 +867,7 @@ Lavoro:  <a href="https://pezzanera.it/" target="_blank" rel="noopener">pezzaner
   var $$ = function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
   var root=document.documentElement;
   var GL={floor:0,on:false,base:1};
+  var T=function(s){ return window.L ? L.t(s) : s; };   // testi scritti dallo script: in inglese se serve (dizionario nello script della lingua)
 
   /* =================== MAXAMP: generative lo-fi, 4 tracks =================== */
   var TRACKS=[
@@ -870,8 +1030,8 @@ Lavoro:  <a href="https://pezzanera.it/" target="_blank" rel="noopener">pezzaner
   /* ---------- camcorder timecode, title marquee ---------- */
   var tc=$('#tc'), t0=Date.now();
   setInterval(function(){ var s=Math.floor((Date.now()-t0)/1000); tc.textContent=('0'+Math.floor(s/3600)).slice(-2)+':'+('0'+Math.floor(s%3600/60)).slice(-2)+':'+('0'+s%60).slice(-2); },1000);
-  var baseTitle=document.title, mq='★ maxbuildthings ★ torna qui ', mi=0, mt=null;
-  document.addEventListener('visibilitychange',function(){ if(document.hidden){ mt=setInterval(function(){ mi=(mi+1)%mq.length; document.title=mq.slice(mi)+mq.slice(0,mi); },320); } else { clearInterval(mt); document.title=baseTitle; } });
+  var baseTitle=document.title, mq='', mi=0, mt=null;
+  document.addEventListener('visibilitychange',function(){ if(document.hidden){ baseTitle=document.title; mq=T('★ maxbuildthings ★ torna qui '); mi=0; clearInterval(mt); mt=setInterval(function(){ mi=(mi+1)%mq.length; document.title=mq.slice(mi)+mq.slice(0,mi); },320); } else { clearInterval(mt); document.title=baseTitle; } });
 
   /* ---------- VHS tracking events: jitter + RGB split + static ---------- */
   var page=$('#page'), nz=$('#noise'), nzc=nz.getContext('2d');
@@ -887,7 +1047,7 @@ Lavoro:  <a href="https://pezzanera.it/" target="_blank" rel="noopener">pezzaner
   function passes(w){ var t=w.dataset.type; return filter==='all'||t===filter||t==='about'; }
   function taskBtn(w){ return $('.btn[data-for="'+w.id+'"]',tasks); }
   function dock(w){ if(!w.classList.contains('floating')) return; w.classList.remove('floating'); w.style.left=w.style.top=w.style.width=w.style.zIndex=''; if(w._ph){ w._ph.remove(); w._ph=null; } }
-  function undock(w,r){ var ph=document.createElement('div'); ph.className='ph'; ph.style.height=r.height+'px'; ph.textContent='finestra spostata · doppio clic sulla sua barra per rimetterla qui'; w._ph=ph; w.parentNode.insertBefore(ph,w); w.classList.add('floating'); w.style.width=r.width+'px'; w.style.left=r.left+'px'; w.style.top=r.top+'px'; }
+  function undock(w,r){ var ph=document.createElement('div'); ph.className='ph'; ph.style.height=r.height+'px'; ph.textContent=T('finestra spostata · doppio clic sulla sua barra per rimetterla qui'); w._ph=ph; w.parentNode.insertBefore(ph,w); w.classList.add('floating'); w.style.width=r.width+'px'; w.style.left=r.left+'px'; w.style.top=r.top+'px'; }
   function makeDraggable(w,isFixed){ if(!fine) return; var bar=$('.bar',w);
     bar.addEventListener('pointerdown',function(e){ if(e.button!==0||e.target.closest('.wbtn')) return; e.preventDefault(); var r=w.getBoundingClientRect(); w.style.transform='';
       if(!isFixed && !w.classList.contains('floating')) undock(w,r); if(isFixed){ w.style.right='auto'; w.style.bottom='auto'; w.style.left=r.left+'px'; w.style.top=r.top+'px'; }
@@ -918,7 +1078,7 @@ Lavoro:  <a href="https://pezzanera.it/" target="_blank" rel="noopener">pezzaner
   });
   makeDraggable($('#player'),true);
   setActive(wins[0]);
-  function updateCount(){ var n=wins.filter(function(w){return !w.hidden&&!w.classList.contains('minimized')}).length; count.textContent=n+(n===1?' oggetto':' oggetti'); }
+  function updateCount(){ var n=wins.filter(function(w){return !w.hidden&&!w.classList.contains('minimized')}).length; count.textContent=n+' '+T(n===1?'oggetto':'oggetti'); }
   function applyFilter(){ wins.forEach(function(w){ w.hidden=!passes(w)||taskBtn(w).classList.contains('closed'); if(w.hidden) dock(w); }); updateCount(); }
   function setFilter(f){ filter=f; $$('[data-filter]').forEach(function(x){x.setAttribute('aria-pressed',x.dataset.filter===f?'true':'false')}); applyFilter(); }
   $$('[data-filter]').forEach(function(btn){ btn.addEventListener('click',function(){ beep(760,.05); setFilter(btn.dataset.filter); }); });
@@ -930,7 +1090,7 @@ Lavoro:  <a href="https://pezzanera.it/" target="_blank" rel="noopener">pezzaner
   /* ---------- modal (maximize) ---------- */
   var overlay=$('#overlay'), mBody=$('#mBody'), mTitle=$('#mTitle'), lastFocus=null, loadT=null;
   function openModal(w){ lastFocus=document.activeElement; mTitle.innerHTML=$('.ttl',w).innerHTML;
-    mBody.innerHTML='<div class="loading">Caricamento di '+mTitle.textContent+'…<div class="pbar"><i></i></div></div>'; overlay.hidden=false; document.body.style.overflow='hidden'; $('#mClose').focus();
+    mBody.innerHTML='<div class="loading">'+T('Caricamento di')+' '+mTitle.textContent+'…<div class="pbar"><i></i></div></div>'; overlay.hidden=false; document.body.style.overflow='hidden'; $('#mClose').focus();
     clearTimeout(loadT); loadT=setTimeout(function(){ mBody.innerHTML=''; var body=$('.body',w).cloneNode(true); $$('.zoom',body).forEach(function(z){z.remove()}); var shot=$('.shot',body); if(shot){ shot.removeAttribute('role'); shot.removeAttribute('tabindex'); shot.removeAttribute('data-act'); } while(body.firstChild) mBody.appendChild(body.firstChild); },reduced?0:440); }
   function closeModal(){ clearTimeout(loadT); overlay.hidden=true; document.body.style.overflow=''; if(lastFocus) lastFocus.focus(); }
   $('#mClose').addEventListener('click',closeModal);
@@ -985,7 +1145,10 @@ Lavoro:  <a href="https://pezzanera.it/" target="_blank" rel="noopener">pezzaner
   /* ---------- visit counter, clock, favicon, deep link ---------- */
   var n=1; try{ n=(parseInt(localStorage.getItem('visits')||'0',10)||0)+1; localStorage.setItem('visits',String(n)); }catch(e){}
   var digits=String(Math.min(n,9999)).padStart(4,'0').split(''); $$('#odo i').forEach(function(d,i){ d.textContent=digits[i]; });
-  $('#odolbl').textContent = n===1 ? 'volta' : 'volte';
+  function odoLbl(){ $('#odolbl').textContent = T(n===1 ? 'volta' : 'volte'); } odoLbl();
+  // cambio di lingua: i testi scritti da qui non sono nel DOM di partenza, si riscrivono
+  document.addEventListener('lingua',function(){ updateCount(); odoLbl(); closeStart(); beep(700,.05);
+    $$('.ph').forEach(function(ph){ ph.textContent=T('finestra spostata · doppio clic sulla sua barra per rimetterla qui'); }); });
   var clock=$('#clock'); function tick(){ var d=new Date(); clock.textContent=('0'+d.getHours()).slice(-2)+':'+('0'+d.getMinutes()).slice(-2); } tick(); setInterval(tick,15000);
   var fav=document.getElementById('fav'); if(fav && fav.dataset.alt && !reduced){ var fr=[fav.href,fav.dataset.alt], fi=0; setInterval(function(){ fi=1-fi; fav.href=fr[fi]; },900); }
   var h=(location.hash||'').replace('#',''); if(h){ var dw=document.getElementById(h); if(dw&&dw.classList.contains('win')){ setTimeout(function(){ dw.scrollIntoView({block:'center'}); setActive(dw); },300); } }
@@ -993,7 +1156,7 @@ Lavoro:  <a href="https://pezzanera.it/" target="_blank" rel="noopener">pezzaner
 </script>
 
 <script>
-document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[href^=\"mailto:\"]");if(!a||!navigator.clipboard)return;navigator.clipboard.writeText(a.href.slice(7).split("?")[0]).then(function(){if(!a.dataset.orig)a.dataset.orig=a.innerHTML;a.textContent="✓ copiato";clearTimeout(a._t);a._t=setTimeout(function(){a.innerHTML=a.dataset.orig;delete a.dataset.orig},2600)},function(){})});
+document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[href^=\"mailto:\"]");if(!a||!navigator.clipboard)return;navigator.clipboard.writeText(a.href.slice(7).split("?")[0]).then(function(){if(!a.dataset.orig)a.dataset.orig=a.innerHTML;a.textContent=window.L?L.t("✓ copiato"):"✓ copiato";clearTimeout(a._t);a._t=setTimeout(function(){a.innerHTML=a.dataset.orig;delete a.dataset.orig},2600)},function(){})});
 </script>
 </body>
 </html>
