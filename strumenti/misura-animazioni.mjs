@@ -66,6 +66,8 @@ async function misura(browser, v) {
   if (v.css) await ctx.addInitScript(css => { document.addEventListener('DOMContentLoaded', () => { const s = document.createElement('style'); s.textContent = css; document.head.appendChild(s); }); }, v.css);
   if (v.senzaGL) await ctx.route('**/vendor/three/**', r => r.abort());
   const page = await ctx.newPage();
+  // una pagina con lo script rotto e' piu' leggera e darebbe numeri belli e falsi: meglio fermarsi
+  page.on('pageerror', e => { console.error(`\nERRORE JS nella pagina (${v.nome}): ${e.message}`); process.exit(2); });
   const cdp = await ctx.newCDPSession(page);
   await cdp.send('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, deviceScaleFactor: 3, mobile: true });
   await cdp.send('Emulation.setTouchEmulationEnabled', { enabled: true, maxTouchPoints: 5 });

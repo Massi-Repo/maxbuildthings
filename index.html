@@ -120,8 +120,10 @@ body.aesthetic .page,body.aesthetic .scene,body.aesthetic .kata{animation:hue 5s
 .word .w::before{content:attr(data-text);position:absolute;inset:0;padding-inline:inherit;z-index:-1;color:#3a1a8a;transform:translate(.045em,.05em);
   text-shadow:1px 1px #2b1680,2px 2px #2b1680,3px 3px #2b1680,4px 4px #2b1680,5px 5px #2b1680,6px 6px #2b1680,7px 7px #2b1680,10px 10px 18px rgba(0,0,0,.7)}
 .word i{font-style:inherit;display:block;position:relative;isolation:isolate;background:linear-gradient(180deg,#fff 0%,#e8ebff 30%,#8a94c8 48%,#fff 52%,#ffd4f1 70%,#fff 100%);background-size:100% 100%;
-  -webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 14px rgba(255,95,193,.45));animation:shine 7s ease-in-out infinite}
-@keyframes shine{0%,80%{background-size:100% 100%;background-position:0 0}90%{background-size:100% 160%;background-position:0 100%}100%{background-size:100% 100%;background-position:0 0}}
+  -webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 14px rgba(255,95,193,.45))}
+/* il luccichio dura 1,4 s ogni 7 (classe .shine messa dallo script): fermo, il titolo non si ridisegna */
+.word.shine i{animation:shine 1.4s ease-in-out}
+@keyframes shine{0%{background-size:100% 100%;background-position:0 0}50%{background-size:100% 160%;background-position:0 100%}100%{background-size:100% 100%;background-position:0 0}}
 .word .w:nth-child(2){font-size:.62em;letter-spacing:.18em;padding-left:.3em}
 .word .w:nth-child(2) i{background:linear-gradient(180deg,#45f0ff 0%,#fff 50%,#45f0ff 100%);-webkit-background-clip:text;background-clip:text}
 .word .w:nth-child(2)::before{color:#0b4a5a;text-shadow:1px 1px #073a47,2px 2px #073a47,3px 3px #073a47,4px 4px #073a47,7px 7px 12px rgba(0,0,0,.7)}
@@ -133,8 +135,10 @@ body.aesthetic .page,body.aesthetic .scene,body.aesthetic .kata{animation:hue 5s
 @keyframes glitchA{0%{clip-path:inset(0 0 80% 0);transform:translate(-9px,3px)}30%{clip-path:inset(45% 0 25% 0);transform:translate(7px,-2px)}60%{clip-path:inset(70% 0 5% 0);transform:translate(-6px,1px)}100%{clip-path:inset(0 0 0 0);transform:translate(-4px,2px)}}
 @keyframes glitchB{0%{clip-path:inset(60% 0 10% 0);transform:translate(9px,-3px)}30%{clip-path:inset(10% 0 60% 0);transform:translate(-7px,2px)}60%{clip-path:inset(35% 0 40% 0);transform:translate(6px,-1px)}100%{clip-path:inset(0 0 0 0);transform:translate(4px,-2px)}}
 .jp{margin:10px 0 0;font:17px/1.3 var(--font-pixel);color:var(--cyan);letter-spacing:.3em;text-shadow:0 0 4px #07021a,0 0 10px #07021a,0 0 8px rgba(69,240,255,.6)}
-.dotcom{display:inline-block;margin-top:8px;font:20px/1 var(--font-pixel);color:var(--gold);letter-spacing:.08em;padding:3px 10px;border:1px solid var(--gold);background:rgba(7,2,26,.6);text-shadow:0 0 10px rgba(255,211,110,.6);animation:dotcom 3s ease-in-out infinite}
-@keyframes dotcom{50%{box-shadow:0 0 14px rgba(255,211,110,.7),inset 0 0 10px rgba(255,211,110,.25)}}
+.dotcom{display:inline-block;margin-top:8px;font:20px/1 var(--font-pixel);color:var(--gold);letter-spacing:.08em;padding:3px 10px;border:1px solid var(--gold);background:rgba(7,2,26,.6);text-shadow:0 0 10px rgba(255,211,110,.6);position:relative}
+/* il bagliore e' gia' disegnato in uno strato: si anima solo la sua opacita' */
+.dotcom::after{content:"";position:absolute;inset:-1px;pointer-events:none;box-shadow:0 0 14px rgba(255,211,110,.7),inset 0 0 10px rgba(255,211,110,.25);opacity:0;animation:dotcom 3s ease-in-out infinite}
+@keyframes dotcom{50%{opacity:1}}
 .sub{max-width:34em;margin:14px auto 0;color:var(--fg);font-size:14px;line-height:1.55;text-shadow:0 1px 0 var(--bg-deep),0 0 14px var(--bg-deep),0 0 30px var(--bg-deep)}
 .sub b{color:var(--gold);font-weight:700}
 .hint{display:inline-block;margin-top:14px;font:19px/1 var(--font-pixel);color:var(--green);text-decoration:none;letter-spacing:.06em;text-shadow:0 0 8px rgba(57,255,138,.7)}
@@ -184,8 +188,12 @@ body.aesthetic .page,body.aesthetic .scene,body.aesthetic .kata{animation:hue 5s
 .ph{border:2px dashed var(--pink);opacity:.55;display:grid;place-items:center;text-align:center;padding:12px;font:18px/1.3 var(--font-pixel);color:var(--pink);min-height:120px}
 .bar{display:flex;align-items:center;gap:6px;padding:3px 3px 3px 8px;cursor:default;user-select:none;touch-action:none;background:linear-gradient(90deg,var(--title-a),var(--title-b));color:#fff;font:21px/1 var(--font-pixel);letter-spacing:.02em}
 @media (pointer:fine){.win.dragable .bar{cursor:grab}.win.dragging .bar{cursor:grabbing}}
-.win.active .bar{background:linear-gradient(90deg,var(--title-a),var(--title-active-b),var(--cyan),var(--title-active-b),var(--title-a));background-size:300% 100%;animation:holo 5s linear infinite}
-@keyframes holo{to{background-position:300% 0}}
+/* barra olografica: il gradiente (largo 3 barre, ripetuto due volte) sta in uno strato che scorre con transform:
+   sul compositore, senza ridisegni. Stesso passo e stessa velocita' del vecchio background-position */
+.win.active .bar{position:relative;isolation:isolate;overflow:hidden}
+.win.active .bar::before{content:"";position:absolute;top:0;bottom:0;left:0;width:600%;z-index:-1;pointer-events:none;will-change:transform;
+  background:linear-gradient(90deg,var(--title-a),var(--title-active-b),var(--cyan),var(--title-active-b),var(--title-a),var(--title-active-b),var(--cyan),var(--title-active-b),var(--title-a));animation:holo 2.5s linear infinite}
+@keyframes holo{to{transform:translateX(-50%)}}
 .win.active .bar .ttl{text-shadow:0 1px 0 rgba(20,5,54,.7),0 0 6px rgba(20,5,54,.55)}
 .bar .ttl{flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .bar .ttl i{font-style:normal;opacity:.75}
@@ -228,9 +236,11 @@ body.aesthetic .page,body.aesthetic .scene,body.aesthetic .kata{animation:hue 5s
 .led.live{background:#19c45c;box-shadow:0 0 6px #19c45c;animation:blink 2.4s steps(2) infinite}
 .led.wip{background:#e8a100;box-shadow:0 0 6px #e8a100}
 .led.soon{background:var(--violet);box-shadow:0 0 6px var(--violet)}
-.construction{position:absolute;left:-4px;right:-4px;top:38px;z-index:2;pointer-events:none;background:repeating-linear-gradient(135deg,#ffd000 0 14px,#111 14px 28px);color:#111;text-align:center;font:bold 13px/1 var(--font-ui);letter-spacing:.14em;padding:5px 0;text-transform:uppercase;text-shadow:0 0 4px #ffd000,0 0 8px #ffd000;transform:rotate(-2deg);animation:stripes 1.2s linear infinite;box-shadow:0 3px 0 rgba(0,0,0,.4)}
+.construction{position:absolute;left:-4px;right:-4px;top:38px;z-index:2;pointer-events:none;background:repeating-linear-gradient(135deg,#ffd000 0 14px,#111 14px 28px);color:#111;text-align:center;font:bold 13px/1 var(--font-ui);letter-spacing:.14em;padding:5px 0;text-transform:uppercase;text-shadow:0 0 4px #ffd000,0 0 8px #ffd000;transform:rotate(-2deg);box-shadow:0 3px 0 rgba(0,0,0,.4);isolation:isolate;overflow:hidden}
+/* le strisce scorrono come strato a parte (transform), non ridisegnando lo sfondo a ogni frame */
+.construction::before{content:"";position:absolute;top:0;bottom:0;left:-40px;right:0;z-index:-1;background:inherit;will-change:transform;animation:stripes 1.2s linear infinite}
 .construction span{background:#ffd000;padding:1px 8px;text-shadow:none}
-@keyframes stripes{to{background-position:40px 0}}
+@keyframes stripes{to{transform:translateX(40px)}}
 .notepad{font:13.5px/1.6 "Lucida Console","Courier New",monospace;background:#fff;color:var(--win-ink);padding:12px 14px;flex:1 1 auto;min-width:0;white-space:pre-wrap;box-shadow:inset 1px 1px var(--win-dk),inset -1px -1px var(--win-hi),inset 2px 2px var(--win-sh)}
 .notepad a{color:var(--title-a)}
 .list{display:flex;flex-direction:column;gap:0;font-size:13px;background:#fff;box-shadow:inset 1px 1px var(--win-dk),inset -1px -1px var(--win-hi),inset 2px 2px var(--win-sh)}
@@ -250,8 +260,10 @@ body.aesthetic .page,body.aesthetic .scene,body.aesthetic .kata{animation:hue 5s
 .odo i{font:22px/1.1 var(--font-pixel);font-style:normal;color:var(--green);background:#000;padding:2px 5px;border:1px solid #333;text-shadow:0 0 6px var(--green);min-width:1em;text-align:center;font-variant-numeric:tabular-nums}
 .badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:22px}
 .b88{width:88px;height:31px;display:inline-grid;place-items:center;font:13px/1.05 var(--font-pixel);text-align:center;letter-spacing:.04em;background:var(--a);color:var(--b);border:1px solid var(--b);box-shadow:inset 1px 1px rgba(255,255,255,.35),inset -1px -1px rgba(0,0,0,.6),2px 2px 0 rgba(0,0,0,.5);text-decoration:none}
-.b88.blink{animation:blinkb 1s steps(2) infinite}
-@keyframes blinkb{50%{border-color:var(--a);color:var(--a);background:var(--b)}}
+/* lampeggio a colori invertiti: una copia in negativo sopra, accesa e spenta con opacity */
+.b88.blink{position:relative}
+.b88.blink::after{content:"BEST VIEWED\A 800×600";white-space:pre;position:absolute;inset:-1px;display:grid;place-items:center;background:var(--b);color:var(--a);border:1px solid var(--a);opacity:0;animation:blinkb 1s steps(1) infinite}
+@keyframes blinkb{50%{opacity:1}}
 .foot{margin-top:14px;text-align:center;font:18px/1.4 var(--font-pixel);color:var(--muted);letter-spacing:.03em}
 
 /* ---------- taskbar ---------- */
@@ -337,8 +349,10 @@ body.aesthetic .page,body.aesthetic .scene,body.aesthetic .kata{animation:hue 5s
   .word .w::before{text-shadow:1px 1px #2b1680,2px 2px #2b1680,3px 3px #2b1680,4px 4px #2b1680,7px 7px 12px rgba(0,0,0,.7)}
 }
 @media (max-width:480px) and (max-height:700px){.jp{display:none}.word{font-size:34px}}
+/* fuori schermo le animazioni restano ferme (classe messa da un IntersectionObserver): niente lavoro per cose che non si vedono */
+.fuori,.fuori::before,.fuori::after,.fuori *,.fuori *::before,.fuori *::after{animation-play-state:paused!important}
 @media (prefers-reduced-motion:reduce){
-  .floor,.ticker-track,.word i,.word i::before,.word i::after,.led.live,.prompt .cur,.construction,.osd .rec,.net i,.newb,.newb b,.dotcom,.win.active .bar,.b88.blink,.hint i,.cascade .win,.sweep{animation:none!important}
+  .floor,.ticker-track,.word i,.word i::before,.word i::after,.led.live,.prompt .cur,.construction,.construction::before,.osd .rec,.net i,.newb,.newb b,.dotcom,.dotcom::after,.win.active .bar,.win.active .bar::before,.b88.blink,.b88.blink::after,.hint i,.cascade .win,.sweep{animation:none!important}
   .win{transition:none}
   html{scroll-behavior:auto}
 }
@@ -756,7 +770,18 @@ Lavoro:  <a href="https://pezzanera.it/" target="_blank" rel="noopener">pezzaner
 
   var typed=false;
   function typePrompt(){ if(typed||reduced) return; typed=true; var el=$('#prompt'), full='C:\\> maxbuildthings.exe', i=0; el.textContent=''; (function tk(){ el.textContent=full.slice(0,++i); if(i<full.length) setTimeout(tk,45); })(); }
-  var word=$('#word'); if(!reduced){ (function g(){ setTimeout(function(){ word.classList.add('glitch'); setTimeout(function(){word.classList.remove('glitch')},520); g(); }, 5000+Math.random()*5000); })(); }
+  /* ---------- animazioni fuori schermo in pausa ---------- */
+  // le animazioni CSS infinite fuori dalla vista non devono costare niente: .fuori le mette in pausa (vedi CSS)
+  var visibile=function(){ return true; };
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ e.target.classList.toggle('fuori',!e.isIntersecting); }); },{rootMargin:'80px 0px'});
+    $$('.hero,.ticker,.win,.counter,.badges').forEach(function(el){ io.observe(el); });
+    visibile=function(el){ return !el.closest('.fuori'); };
+  }
+  var word=$('#word'); if(!reduced){
+    (function g(){ setTimeout(function(){ if(!document.hidden&&visibile(word)){ word.classList.add('glitch'); setTimeout(function(){word.classList.remove('glitch')},520); } g(); }, 5000+Math.random()*5000); })();
+    // luccichio del cromo: 1,4 s ogni 7 s, solo se il titolo si vede
+    setInterval(function(){ if(document.hidden||!visibile(word)) return; word.classList.add('shine'); setTimeout(function(){ word.classList.remove('shine'); },1450); },7000); }
 
   /* ---------- parallax ---------- */
   var mouse={x:0,y:0};
@@ -765,7 +790,9 @@ Lavoro:  <a href="https://pezzanera.it/" target="_blank" rel="noopener">pezzaner
   /* ---------- 2D layers: stars + shooting stars, palms ---------- */
   var cv=$('#stars'), ctx=cv.getContext('2d'), stars=[], meteor=null, nextMeteor=200;
   function sizeStars(){ cv.width=cv.clientWidth; cv.height=cv.clientHeight; stars=[]; var n=Math.round(cv.width*cv.height/7000); for(var i=0;i<n;i++) stars.push({x:Math.random()*cv.width,y:Math.random()*cv.height*.55,r:Math.random()*1.4+.3,p:Math.random()*6.28,s:Math.random()*.02+.005}); drawStars(0); }
-  function drawStars(t){ ctx.clearRect(0,0,cv.width,cv.height); for(var i=0;i<(GL.on?0:stars.length);i++){ var s=stars[i]; var a=.35+.65*Math.abs(Math.sin(s.p+t*s.s)); ctx.globalAlpha=a; ctx.fillStyle=i%7===0?'#ffd4f1':(i%11===0?'#45f0ff':'#fff'); ctx.fillRect(s.x,s.y,s.r,s.r);} ctx.globalAlpha=1;
+  var cielo=true;   // c'e' qualcosa disegnato sul canvas delle stelle?
+  function drawStars(t){ if(GL.on&&!meteor&&!cielo&&nextMeteor>1){ nextMeteor--; return; }   // con WebGL le stelle le fa la scena: qui solo le meteore, e a canvas vuoto non si ripulisce niente
+    cielo=!GL.on||!!meteor; ctx.clearRect(0,0,cv.width,cv.height); for(var i=0;i<(GL.on?0:stars.length);i++){ var s=stars[i]; var a=.35+.65*Math.abs(Math.sin(s.p+t*s.s)); ctx.globalAlpha=a; ctx.fillStyle=i%7===0?'#ffd4f1':(i%11===0?'#45f0ff':'#fff'); ctx.fillRect(s.x,s.y,s.r,s.r);} ctx.globalAlpha=1;
     if(meteor){ meteor.x+=meteor.vx; meteor.y+=meteor.vy; meteor.life--; var gr=ctx.createLinearGradient(meteor.x,meteor.y,meteor.x-meteor.vx*9,meteor.y-meteor.vy*9); gr.addColorStop(0,'#fff'); gr.addColorStop(1,'rgba(255,255,255,0)'); ctx.strokeStyle=gr; ctx.lineWidth=2; ctx.beginPath(); ctx.moveTo(meteor.x,meteor.y); ctx.lineTo(meteor.x-meteor.vx*9,meteor.y-meteor.vy*9); ctx.stroke(); if(meteor.life<=0) meteor=null; }
     else if(--nextMeteor<=0){ nextMeteor=100+Math.random()*220; meteor={x:Math.random()*cv.width*.8,y:Math.random()*cv.height*.25,vx:7+Math.random()*5,vy:2.5+Math.random()*2,life:26}; } }
   var fg=$('#fg'), fx=fg.getContext('2d');
@@ -818,8 +845,8 @@ Lavoro:  <a href="https://pezzanera.it/" target="_blank" rel="noopener">pezzaner
     function layout(){ var W=glc.clientWidth,H=glc.clientHeight; renderer.setSize(W,H,false); cam.aspect=W/H; cam.updateProjectionMatrix(); var halfH=9*Math.tan(22.5*Math.PI/180), halfW=halfH*cam.aspect;
       if(cam.aspect<.9){ GL.base=.36; knot.position.set(halfW*.62,-2.6,0); ico.position.set(-halfW*.62,-2.8,0); ball.position.set(-halfW*.3,-4.2,2); ring.position.set(halfW*.35,-4.4,2); }
       else { GL.base=Math.min(.8,halfW/6.6); knot.position.set(halfW*.7,.6,0); ico.position.set(-halfW*.72,.9,0); ball.position.set(-halfW*.5,-3.2,1.5); ring.position.set(halfW*.45,-3.4,1.5); }
-      if(composer){ composer.setSize(W,H); } }
-    if(THREE.EffectComposer && THREE.UnrealBloomPass && THREE.RenderPass){ try{ composer=new THREE.EffectComposer(renderer); composer.addPass(new THREE.RenderPass(scene,cam)); bloom=new THREE.UnrealBloomPass(new THREE.Vector2(innerWidth,innerHeight),.55,.45,.82); composer.addPass(bloom); }catch(e){ composer=null; } }
+      if(composer){ composer.setSize(W,H); if(bloom&&rb<1){ var pr=renderer.getPixelRatio(); bloom.setSize(Math.round(W*pr*rb),Math.round(H*pr*rb)); } } }
+    if(THREE.EffectComposer && THREE.UnrealBloomPass && THREE.RenderPass){ try{ composer=new THREE.EffectComposer(renderer); composer.addPass(new THREE.RenderPass(scene,cam)); /* sul telefono il bagliore si calcola a meta' risoluzione: e' sfocato comunque, la griglia resta nitida */ var rb=fine?1:.5; bloom=new THREE.UnrealBloomPass(new THREE.Vector2(innerWidth*rb,innerHeight*rb),.55,.45,.82); composer.addPass(bloom); }catch(e){ composer=null; } }
     layout(); window.addEventListener('resize',layout);
     var t=0; (function loop(){ t+=.008; var b=A.beat||0; var s=GL.base*(1+b*.18); knot.scale.setScalar(s); ico.scale.setScalar(s*.9); ball.scale.setScalar(s*.8); ring.scale.setScalar(s*.75);
       knot.rotation.x=t*.7; knot.rotation.y=t*.9; ico.rotation.x=-t*.5; ico.rotation.y=t*.8; ball.position.y+=Math.sin(t*1.7)*.004; ring.rotation.x=t*.8; ring.rotation.z=t*.6;
@@ -851,7 +878,8 @@ Lavoro:  <a href="https://pezzanera.it/" target="_blank" rel="noopener">pezzaner
   function staticBurst(ms){ nz.width=Math.floor(innerWidth/3); nz.height=Math.floor(innerHeight/3); nz.hidden=false; var end=Date.now()+ms; (function fr(){ var img=nzc.createImageData(nz.width,nz.height), d=img.data; for(var i=0;i<d.length;i+=4){ var v=Math.random()*255|0; d[i]=v; d[i+1]=v; d[i+2]=v; d[i+3]=255; } nzc.putImageData(img,0,0); if(Date.now()<end) requestAnimationFrame(fr); else nz.hidden=true; })(); }
   function tracking(){ page.classList.add('jitter','rgb'); staticBurst(260); beep(120,.25,'sawtooth'); setTimeout(function(){ page.classList.remove('jitter','rgb'); },420); }
   if(!reduced){ (function sched(){ setTimeout(function(){ tracking(); sched(); }, 16000+Math.random()*24000); })(); }
-  var lastY=scrollY, rgbT=null; window.addEventListener('scroll',function(){ var d=Math.abs(scrollY-lastY); lastY=scrollY; if(d>140 && !reduced){ page.classList.add('rgb'); clearTimeout(rgbT); rgbT=setTimeout(function(){ page.classList.remove('rgb'); },220); } },{passive:true});
+  // lo sdoppiamento RGB e' un filtro SVG su tutta la pagina: col mouse va bene, col dito arriverebbe a ogni scroll veloce e lo scatterebbe
+  var lastY=scrollY, rgbT=null; window.addEventListener('scroll',function(){ var d=Math.abs(scrollY-lastY); lastY=scrollY; if(d>140 && !reduced && fine){ page.classList.add('rgb'); clearTimeout(rgbT); rgbT=setTimeout(function(){ page.classList.remove('rgb'); },220); } },{passive:true});
 
   /* ---------- windows ---------- */
   var wins=$$('.win[data-type]'), tasks=$('#tasks'), count=$('#count'), filter='all', active=null, zTop=20;
