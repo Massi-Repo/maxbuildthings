@@ -38,22 +38,31 @@ code{font:20px/1.1 "VT323","Courier New",monospace;word-break:break-all}
 </head>
 <body>
 <div class="dlg" role="alertdialog" aria-labelledby="t" aria-describedby="d">
-  <div class="bar"><span id="t">C:\MAX — Errore</span><a class="x" href="/" aria-label="Chiudi">×</a></div>
+  <div class="bar"><span id="t">C:\MAX — Errore</span><a class="x" id="x" href="/" aria-label="Chiudi">×</a></div>
   <div class="body">
     <div class="ico" aria-hidden="true">×</div>
     <div id="d">
-      <p>Impossibile trovare il file<br><code id="path">C:\MAX\???</code></p>
-      <p>Forse è stato spostato nel Cestino, o forse non è mai esistito. Succede anche ai migliori.</p>
+      <p><span id="msg">Impossibile trovare il file</span><br><code id="path">C:\MAX\???</code></p>
+      <p id="spiega">Forse è stato spostato nel Cestino, o forse non è mai esistito. Succede anche ai migliori.</p>
     </div>
   </div>
   <div class="acts">
     <a class="btn" href="/" autofocus>OK</a>
-    <a class="btn" href="/#progetti">Vedi i progetti</a>
+    <a class="btn" id="vedi" href="/#progetti">Vedi i progetti</a>
   </div>
 </div>
 <script>
 var p=decodeURIComponent(location.pathname).replace(/^\/+|\/+$/g,"").replace(/\//g,"\\");
 if(p)document.getElementById("path").textContent="C:\\MAX\\"+p.slice(0,80);
+/* lingua: la stessa scelta del sito (localStorage 'lingua'), altrimenti quella del browser */
+var l;try{l=localStorage.getItem("lingua")}catch(e){}
+if(l!=="it"&&l!=="en")l=/^it\b/i.test((navigator.languages&&navigator.languages[0])||navigator.language||"it")?"it":"en";
+if(l==="en"){var $=function(i){return document.getElementById(i)};
+  document.documentElement.lang="en";document.title="File not found — maxbuildthings";
+  $("t").textContent="C:\\MAX — Error";$("x").setAttribute("aria-label","Close");
+  $("msg").textContent="Cannot find the file";
+  $("spiega").textContent="Maybe it ended up in the Recycle Bin, or maybe it never existed. Happens to the best of us.";
+  $("vedi").textContent="See the projects";$("vedi").href="/?lang=en#progetti";}
 </script>
 </body>
 </html>
