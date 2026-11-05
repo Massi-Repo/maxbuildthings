@@ -970,6 +970,8 @@ Lavoro:  <a href="https://pezzanera.it/" target="_blank" rel="noopener">pezzaner
   /* ---------- VaporGL: full WebGL outrun scene with bloom ---------- */
   var avviaScena=function(){ if(!window.THREE || reduced) return; var glc=$('#gl'), renderer;
     try{ renderer=new THREE.WebGLRenderer({canvas:glc,antialias:true}); }catch(e){ return; }
+    /* senza GPU vera (rendering software: PC vecchi, test automatici) la scena 3D pesa troppo: resta lo sfondo 2D */
+    try{ var gx=renderer.getContext(), dx=gx.getExtension('WEBGL_debug_renderer_info'); if(dx && !/[?&]gl=forza/.test(location.search) && /swiftshader|llvmpipe|software|basic render/i.test(String(gx.getParameter(dx.UNMASKED_RENDERER_WEBGL)))){ renderer.forceContextLoss(); renderer.dispose(); return; } }catch(e){}
     renderer.setPixelRatio(Math.min(devicePixelRatio,1.5)); renderer.setClearColor(0x07021a,1);
     var scene=new THREE.Scene(); scene.fog=new THREE.Fog(0x2a0b55,70,150);
     var cam=new THREE.PerspectiveCamera(45,1,.1,500); cam.position.set(0,1.2,9);
@@ -1016,7 +1018,9 @@ Lavoro:  <a href="https://pezzanera.it/" target="_blank" rel="noopener">pezzaner
       if(composer) composer.render(); else renderer.render(scene,cam); requestAnimationFrame(loop); })();
     $('#scene').classList.add('gl'); GL.on=true;
   };
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',avviaScena); else avviaScena();
+  /* la scena parte a pagina già disegnata (dopo load + un istante), così il primo disegno non aspetta il WebGL */
+  var daiScena=function(){ setTimeout(avviaScena,600); };
+  if(document.readyState==='complete') daiScena(); else window.addEventListener('load',daiScena);
 
   /* ---------- sparkle trail / confetti ---------- */
   var tr=$('#trail'), tx=tr.getContext('2d'), parts=[], trailRaf=null;

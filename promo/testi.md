@@ -1,9 +1,18 @@
 # Testi pronti (li mandi tu: cambia quello che non senti tuo)
 Link: https://maxbuildthings.vercel.app  (quando c'è il dominio, cambialo)
 
-## WhatsApp, a chi ha un'attività o conosce chi ce l'ha
-Ciao! Ho messo online il mio sito, un desktop finto anni '90 con tutto quello che ho costruito: https://maxbuildthings.vercel.app
-Oltre al lavoro faccio siti, app e strumenti su misura per attività e ristoranti. Se tu o qualcuno che conosci ne avete bisogno, ditemelo!
+## WhatsApp: tre versioni (una a persona, mai lo stesso testo a tutti; cambia il nome e una riga tua)
+**Ristoratori e titolari che conosci** (clienti di Pezzanera: parla del sito come cosa tua, a parte, senza proporre casse o assistenza)
+Ciao [nome]! Ti scrivo per una cosa mia: oltre al lavoro in ufficio faccio siti e piccole app su misura per attività come la tua (menù online, prenotazioni, una paginetta fatta bene). Ho messo online i lavori qui, è un desktop finto anni '90, dai un'occhiata: https://maxbuildthings.vercel.app
+Se ti servisse qualcosa, o conosci qualcuno a cui serve, dimmelo: ne parliamo senza impegno.
+
+**Amici e famiglia** (il passaparola vale più di tutto)
+Ciao [nome]! Ho finalmente messo online il mio sito, l'ho fatto come se fosse il 1998 😄 https://maxbuildthings.vercel.app
+Fammi sapere cosa ne pensi. E se conosci qualcuno con un'attività che ha bisogno di un sito o di un'app, passagli il link: ci tengo.
+
+**Colleghi e conoscenti del settore**
+Ciao [nome]! Ho aperto il mio portfolio, è un Windows 98 che non è mai esistito: https://maxbuildthings.vercel.app
+Se ti capita un cliente che chiede un sito o un'app su misura (cose che con Pezzanera non facciamo), mandamelo pure.
 
 ## Stato WhatsApp / Storia Instagram (video-verticale.mp4)
 Ho fatto il mio sito come se fosse il 1998. Se ti serve un sito o un'app (più moderni di così, promesso), scrivimi. Link: maxbuildthings.vercel.app

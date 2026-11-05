@@ -22,7 +22,8 @@ async function prova(nome, viewport, extra = {}, lingua = 'it') {
   page.on('console', m => { if (m.type() === 'error') errori.push(m.text()); });
   page.on('pageerror', e => errori.push(e.message));
   page.on('request', r => { const u = new URL(r.url()); if (u.protocol.startsWith('http') && u.origin !== origine) terzi.add(u.host); });
-  const risposta = await page.goto(base, { waitUntil: 'networkidle' });
+  // ?gl=forza: in Chromium senza GPU (SwiftShader) la scena 3D si ferma da sola; qui la si forza per provarla davvero
+  const risposta = await page.goto(base + (base.includes('?') ? '&' : '?') + 'gl=forza', { waitUntil: 'networkidle' });
   await page.waitForTimeout(3000);
   esito(risposta.status() === 200, `pagina: HTTP ${risposta.status()}`);
   const csp = risposta.headers()['content-security-policy'];
