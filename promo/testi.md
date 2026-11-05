@@ -13,14 +13,14 @@ Il mio portfolio è un Windows 98 che non è mai esistito.
 
 Le finestre si trascinano, c'è il BIOS all'avvio, un player lo-fi che genera la musica mentre l'ascolti e un Konami code nascosto. Dentro ci sono i siti e le app che ho costruito negli ultimi anni.
 
-Tutto scritto a mano, in una pagina sola: niente framework, niente cookie.
+Tutto in una pagina sola: niente framework, niente cookie.
 
-Sono Max, developer in Umbria, laurea in psicologia e poi il codice. Faccio siti e web app per attività e ristoranti: se ti serve uno, scrivimi. Rispondo io, non un modulo.
+Sono Max, developer in Umbria, laurea in psicologia e poi il codice. Faccio siti e web app per attività e ristoranti: se te ne serve uno, scrivimi. Rispondo io, non un modulo.
 
 https://maxbuildthings.vercel.app
 
 ## Scheda Google Business (nome: Max Cacace – siti web; categoria: Web designer; zona: Marsciano e provincia di Perugia, senza indirizzo pubblico)
-Faccio siti web e web app per attività e ristoranti in Umbria. Li scrivo a mano, dall'idea alla messa online: veloci sul telefono, senza cookie. Mi scrivi e rispondo io, non un modulo. Guarda i lavori su maxbuildthings.vercel.app.
+Faccio siti web e web app per attività e ristoranti in Umbria. Li faccio su misura, dall'idea alla messa online: veloci sul telefono, senza cookie. Mi scrivi e rispondo io, non un modulo. Guarda i lavori su maxbuildthings.vercel.app.
 
 ## Reddit, r/webdev (Showoff Saturday), in inglese: più avanti
-I rebuilt my portfolio as a fake Windows 98 desktop: draggable windows, BIOS boot, a generative lo-fi player written with Web Audio, all in one hand-written HTML file with no framework. Link: https://maxbuildthings.vercel.app/?lang=en
+I rebuilt my portfolio as a fake Windows 98 desktop: draggable windows, BIOS boot, a generative lo-fi player written with Web Audio, all in one HTML file with no framework. Link: https://maxbuildthings.vercel.app/?lang=en
