@@ -26,7 +26,7 @@ h.lang=l;if(l==="en"){h.classList.add("in-traduzione");setTimeout(function(){h.c
 <meta property="og:image:alt" content="MAX BUILD THINGS in cromo su un tramonto vaporwave, con finestre stile Windows 98">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://maxbuildthings.vercel.app/og.jpg">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Max Cacace","alternateName":"maxbuildthings","url":"https://maxbuildthings.vercel.app/","email":"mailto:massi.cc@proton.me","jobTitle":"Web developer","knowsAbout":["Siti web","Web app","Realizzazione siti per ristoranti e attività"],"worksFor":{"@type":"Organization","name":"Pezzanera Office","url":"https://pezzanera.it/"},"address":{"@type":"PostalAddress","addressLocality":"Marsciano","addressRegion":"PG","addressCountry":"IT"},"sameAs":["https://github.com/Massi-Repo"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Max Cacace","alternateName":"maxbuildthings","url":"https://maxbuildthings.vercel.app/","email":"mailto:massi.cc@proton.me","jobTitle":"Web developer","knowsAbout":["Siti web","Web app","Realizzazione siti per ristoranti e attività"],"address":{"@type":"PostalAddress","addressLocality":"Marsciano","addressRegion":"PG","addressCountry":"IT"},"sameAs":["https://github.com/Massi-Repo"]}</script>
 <link rel="icon" id="fav" type="image/svg+xml" href="favicon.svg" data-alt="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%23140536%22%2F%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2234%22%20r%3D%2216%22%20fill%3D%22%23ffd36e%22%2F%3E%3Crect%20x%3D%220%22%20y%3D%2238%22%20width%3D%2264%22%20height%3D%224%22%20fill%3D%22%23140536%22%2F%3E%3Crect%20x%3D%220%22%20y%3D%2246%22%20width%3D%2264%22%20height%3D%223%22%20fill%3D%22%23140536%22%2F%3E%3Cpath%20d%3D%22M0%2048h64M4%2064l14-16M22%2064l7-16M42%2064l-7-16M60%2064L46%2048%22%20stroke%3D%22%23ff5fc1%22%20stroke-width%3D%221.5%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}html.in-traduzione body{visibility:hidden}</style>
 <title>Max Cacace — siti web e app in Umbria | maxbuildthings</title>
@@ -93,7 +93,7 @@ a{color:inherit}
 .horizon{position:absolute;left:0;right:0;top:calc(66vh - 1px);height:2px;background:#fff;box-shadow:0 0 10px 2px var(--cyan),0 0 40px 8px rgba(69,240,255,.55)}
 .haze{position:absolute;left:0;right:0;top:66vh;height:30vh;background:linear-gradient(180deg,var(--bg-deep) 0%,rgba(7,2,26,0) 100%)}
 .scene.gl .sun,.scene.gl .floor,.scene.gl .horizon,.scene.gl .haze{display:none}
-.crt{position:fixed;inset:0;z-index:9;pointer-events:none;background:repeating-linear-gradient(180deg,rgba(0,0,0,0) 0 2px,rgba(0,0,0,.14) 2px 3px)}
+.crt{position:fixed;inset:0;z-index:0;pointer-events:none;background:repeating-linear-gradient(180deg,rgba(0,0,0,0) 0 2px,rgba(0,0,0,.14) 2px 3px)}
 .crt::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,0) 60%,rgba(0,0,0,.45) 100%)}
 .bars{position:fixed;top:0;left:0;right:0;height:5px;z-index:9;pointer-events:none;background:linear-gradient(90deg,#fff 0 14%,var(--gold) 0 28%,var(--cyan) 0 42%,var(--green) 0 56%,var(--pink) 0 70%,#ff3b3b 0 84%,var(--title-a) 0)}
 #trail{position:fixed;inset:0;z-index:50;pointer-events:none;width:100%;height:100%}
@@ -147,7 +147,7 @@ body.aesthetic .page,body.aesthetic .scene,body.aesthetic .kata{animation:hue 5s
 /* il bagliore e' gia' disegnato in uno strato: si anima solo la sua opacita' */
 .dotcom::after{content:"";position:absolute;inset:-1px;pointer-events:none;box-shadow:0 0 14px rgba(255,211,110,.7),inset 0 0 10px rgba(255,211,110,.25);opacity:0;animation:dotcom 3s ease-in-out infinite}
 @keyframes dotcom{50%{opacity:1}}
-.sub{max-width:34em;margin:14px auto 0;color:var(--fg);font-size:14px;line-height:1.55;text-shadow:0 1px 0 var(--bg-deep),0 0 14px var(--bg-deep),0 0 30px var(--bg-deep)}
+.sub{max-width:36em;margin:14px auto 0;padding:8px 14px;background:rgba(7,2,26,.62);color:var(--fg);font-size:14px;line-height:1.55;text-shadow:0 1px 0 var(--bg-deep),0 0 14px var(--bg-deep),0 0 30px var(--bg-deep)}
 .sub b{color:var(--gold);font-weight:700}
 .hint{display:inline-block;margin-top:14px;font:19px/1 var(--font-pixel);color:var(--green);text-decoration:none;letter-spacing:.06em;text-shadow:0 0 8px rgba(57,255,138,.7)}
 .hint i{display:inline-block;font-style:normal;animation:hint 1.4s ease-in-out infinite}
@@ -413,7 +413,7 @@ body.aesthetic .page,body.aesthetic .scene,body.aesthetic .kata{animation:hue 5s
         <h1 class="word" id="word"><span class="w" data-text="MAX"><i data-text="MAX">MAX</i></span><span class="w" data-text="BUILD"><i data-text="BUILD">BUILD</i></span><span class="w" data-text="THINGS"><i data-text="THINGS">THINGS</i></span></h1>
         <p class="jp" aria-hidden="true">マックスは物を作る</p>
         <br><span class="dotcom">maxbuildthings.com</span>
-        <p class="sub">Sono <b>Max Cacace</b>, developer in Umbria. Faccio <b>siti, app e strumenti su misura</b> per attività e ristoranti.<span class="lungo"> Di giorno costruisco strumenti a Pezzanera. Qui sotto c'è la mia scrivania: ogni finestra è un progetto. Premi ▶ in basso a destra.</span></p>
+        <p class="sub">Sono <b>Max Cacace</b>, developer in Umbria. Faccio <b>siti, app e strumenti su misura</b> per attività e ristoranti.<span class="lungo"> Di giorno sono tecnico a Pezzanera. Qui sotto c'è la mia scrivania: ogni finestra è un progetto. Premi ▶ in basso a destra.</span></p>
         <div class="heroacts"><a class="hint" href="#progetti"><i>▼</i> progetti<span class="lungo"> e siti</span> <i>▼</i></a><a class="cta" href="mailto:massi.cc@proton.me?subject=Ciao%20Max%2C%20ho%20visto%20maxbuildthings">✉ <span class="lungo">ti serve un sito o un&#39;app? </span>scrivimi</a></div>
       </div>
     </header>
@@ -563,10 +563,10 @@ body.aesthetic .page,body.aesthetic .scene,body.aesthetic .kata{animation:hue 5s
           <div class="menubar" aria-hidden="true"><span>File</span><span>Modifica</span><span>Formato</span><span>?</span></div>
           <div class="body" style="padding-top:0">
             <div class="notepad">Max Cacace.
-Tecnico e developer a Pezzanera Office, Marsciano (PG):
+Tecnico a Pezzanera Office, Marsciano (PG):
 POS, registratori telematici e IT per la ristorazione.
 
-Costruisco strumenti interni, siti e web app per i clienti,
+Per conto mio costruisco siti, web app e strumenti su misura,
 automazioni che fanno risparmiare giri a vuoto.
 Laurea in psicologia, poi il codice: mi interessa più
 chi usa la cosa che la cosa.
@@ -735,7 +735,7 @@ Lavoro:  <a href="https://pezzanera.it/" target="_blank" rel="noopener">pezzaner
     // hero
     'Sono':"I'm", ', developer in Umbria. Faccio':', a developer in Umbria, Italy. I make', 'siti, app e strumenti su misura':'custom websites, apps and tools',
     'per attività e ristoranti.':'for small businesses and restaurants.',
-    "Di giorno costruisco strumenti a Pezzanera. Qui sotto c'è la mia scrivania: ogni finestra è un progetto. Premi ▶ in basso a destra.":'By day I build tools at Pezzanera. Below is my desk: every window is a project. Hit ▶ in the bottom right corner.',
+    "Di giorno sono tecnico a Pezzanera. Qui sotto c'è la mia scrivania: ogni finestra è un progetto. Premi ▶ in basso a destra.":'By day I\'m a technician at Pezzanera. Below is my desk: every window is a project. Hit ▶ in the bottom right corner.',
     'progetti':'projects', 'e siti':'& sites', "ti serve un sito o un'app?":'need a website or an app?', 'scrivimi':'email me',
     'mailto:massi.cc@proton.me?subject=Ciao%20Max%2C%20ho%20visto%20maxbuildthings':'mailto:massi.cc@proton.me?subject=Hi%20Max%2C%20I%20saw%20maxbuildthings',
     '★ INCASSA — IN SVILUPPO':'★ INCASSA — IN DEVELOPMENT',
@@ -791,8 +791,8 @@ Lavoro:  <a href="https://pezzanera.it/" target="_blank" rel="noopener">pezzaner
     "Python · Node · Supabase · un po' di tutto":'Python · Node · Supabase · a bit of everything',
     // chi_sono.txt
     'Modifica':'Edit', 'Formato':'Format',
-    "Max Cacace.\nTecnico e developer a Pezzanera Office, Marsciano (PG):\nPOS, registratori telematici e IT per la ristorazione.\n\nCostruisco strumenti interni, siti e web app per i clienti,\nautomazioni che fanno risparmiare giri a vuoto.\nLaurea in psicologia, poi il codice: mi interessa più\nchi usa la cosa che la cosa.\n\nNel tempo libero faccio app per le persone a cui voglio bene.\n\nTi serve un sito, un'app o uno strumento per il lavoro?\nLo faccio io, dall'idea alla messa online:\nveloce, su misura, senza cookie.\nScrivimi. Rispondo io, non un modulo.\n\nEmail:":
-      "Max Cacace.\nIT technician and developer at Pezzanera Office,\nMarsciano (Umbria, Italy): POS systems, fiscal cash\nregisters and IT for restaurants.\n\nI build internal tools, websites and web apps for clients,\nautomations that save people pointless back-and-forth.\nPsychology degree first, then code: I care more about\nthe person using the thing than the thing itself.\n\nIn my spare time I make apps for the people I love.\n\nNeed a website, an app or a tool for your work?\nI'll build it, from the first idea to going live:\nfast, custom-made, cookie-free.\nWrite to me. You get me, not a contact form.\n\nEmail:",
+    "Max Cacace.\nTecnico a Pezzanera Office, Marsciano (PG):\nPOS, registratori telematici e IT per la ristorazione.\n\nPer conto mio costruisco siti, web app e strumenti su misura,\nautomazioni che fanno risparmiare giri a vuoto.\nLaurea in psicologia, poi il codice: mi interessa più\nchi usa la cosa che la cosa.\n\nNel tempo libero faccio app per le persone a cui voglio bene.\n\nTi serve un sito, un'app o uno strumento per il lavoro?\nLo faccio io, dall'idea alla messa online:\nveloce, su misura, senza cookie.\nScrivimi. Rispondo io, non un modulo.\n\nEmail:":
+      "Max Cacace.\nTechnician at Pezzanera Office,\nMarsciano (Umbria, Italy): POS systems, fiscal cash\nregisters and IT for restaurants.\n\nOn my own I build custom websites, web apps and tools,\nautomations that save people pointless back-and-forth.\nPsychology degree first, then code: I care more about\nthe person using the thing than the thing itself.\n\nIn my spare time I make apps for the people I love.\n\nNeed a website, an app or a tool for your work?\nI'll build it, from the first idea to going live:\nfast, custom-made, cookie-free.\nWrite to me. You get me, not a contact form.\n\nEmail:",
     'Lavoro:':'Work:  ',
     // InCassa
     'In costruzione':'Under construction', 'Tavolo 7 · 2 coperti':'Table 7 · 2 guests', 'senza pepe':'no pepper', '2× Acqua 0,75':'2× Water 0,75', 'TOTALE':'TOTAL',
@@ -940,7 +940,7 @@ Lavoro:  <a href="https://pezzanera.it/" target="_blank" rel="noopener">pezzaner
     visibile=function(el){ return !el.closest('.fuori'); };
   }
   var word=$('#word'); if(!reduced){
-    (function g(){ setTimeout(function(){ if(!document.hidden&&visibile(word)){ word.classList.add('glitch'); setTimeout(function(){word.classList.remove('glitch')},520); } g(); }, 5000+Math.random()*5000); })();
+    (function g(){ setTimeout(function(){ if(!document.hidden&&visibile(word)){ word.classList.add('glitch'); setTimeout(function(){word.classList.remove('glitch')},520); } g(); }, 14000+Math.random()*8000); })();
     // luccichio del cromo: 1,4 s ogni 7 s, solo se il titolo si vede
     setInterval(function(){ if(document.hidden||!visibile(word)) return; word.classList.add('shine'); setTimeout(function(){ word.classList.remove('shine'); },1450); },7000); }
 
@@ -1038,9 +1038,8 @@ Lavoro:  <a href="https://pezzanera.it/" target="_blank" rel="noopener">pezzaner
   var page=$('#page'), nz=$('#noise'), nzc=nz.getContext('2d');
   function staticBurst(ms){ nz.width=Math.floor(innerWidth/3); nz.height=Math.floor(innerHeight/3); nz.hidden=false; var end=Date.now()+ms; (function fr(){ var img=nzc.createImageData(nz.width,nz.height), d=img.data; for(var i=0;i<d.length;i+=4){ var v=Math.random()*255|0; d[i]=v; d[i+1]=v; d[i+2]=v; d[i+3]=255; } nzc.putImageData(img,0,0); if(Date.now()<end) requestAnimationFrame(fr); else nz.hidden=true; })(); }
   function tracking(){ page.classList.add('jitter','rgb'); staticBurst(260); beep(120,.25,'sawtooth'); setTimeout(function(){ page.classList.remove('jitter','rgb'); },420); }
-  if(!reduced){ (function sched(){ setTimeout(function(){ tracking(); sched(); }, 16000+Math.random()*24000); })(); }
-  // lo sdoppiamento RGB e' un filtro SVG su tutta la pagina: col mouse va bene, col dito arriverebbe a ogni scroll veloce e lo scatterebbe
-  var lastY=scrollY, rgbT=null; window.addEventListener('scroll',function(){ var d=Math.abs(scrollY-lastY); lastY=scrollY; if(d>140 && !reduced && fine){ page.classList.add('rgb'); clearTimeout(rgbT); rgbT=setTimeout(function(){ page.classList.remove('rgb'); },220); } },{passive:true});
+  
+
 
   /* ---------- windows ---------- */
   var wins=$$('.win[data-type]'), tasks=$('#tasks'), count=$('#count'), filter='all', active=null, zTop=20;
@@ -1058,15 +1057,12 @@ Lavoro:  <a href="https://pezzanera.it/" target="_blank" rel="noopener">pezzaner
       document.addEventListener('pointermove',mv); document.addEventListener('pointerup',up); });
     if(!isFixed) bar.addEventListener('dblclick',function(e){ if(e.target.closest('.wbtn')) return; beep(700,.05); dock(w); w.scrollIntoView({block:'center'}); }); }
   function showWin(w,b){ w.classList.remove('minimized'); w.hidden=false; if(b) b.classList.remove('closed'); if(!passes(w)) setFilter('all'); else applyFilter(); if(!reduced){ w.classList.add('restoring'); setTimeout(function(){w.classList.remove('restoring')},300); } }
-  var scram='!<>-_\\/[]{}—=+*^?#░▒▓';
-  function scramble(h2){ if(!h2||h2._busy) return; var tn=h2.firstChild; if(!tn||tn.nodeType!==3) return; var orig=tn.data, n=0; h2._busy=true; (function fr(){ n++; tn.data=orig.split('').map(function(ch,i){ return (ch===' '||i<n*2-2)?ch:scram[(Math.random()*scram.length)|0]; }).join(''); if(n<9) setTimeout(fr,38); else { tn.data=orig; h2._busy=false; } })(); }
   wins.forEach(function(w){
     var b=document.createElement('button'); b.type='button'; b.className='btn'; b.dataset.for=w.id; b.textContent=w.dataset.title; b.title=w.dataset.title; b.setAttribute('aria-pressed','false');
     b.addEventListener('click',function(){ beep(880,.05); if(w.classList.contains('minimized')||w.hidden) showWin(w,b); if(!w.classList.contains('floating')) w.scrollIntoView({block:'center'}); else w.style.zIndex=++zTop; setActive(w); });
     tasks.appendChild(b);
     w.addEventListener('mousedown',function(){ setActive(w); if(w.classList.contains('floating')) w.style.zIndex=++zTop; });
     w.addEventListener('focusin',function(){ setActive(w); });
-    if(fine && !reduced) w.addEventListener('mouseenter',function(){ scramble($('h2',w)); });
     $$('[data-act]',w).forEach(function(el){
       el.addEventListener('click',function(e){ e.stopPropagation(); var act=el.dataset.act; beep(660,.05);
         if(act==='min'){ w.style.transform=''; w.classList.add('minimizing'); b.setAttribute('aria-pressed','false'); if(active===w) setActive(null); setTimeout(function(){ w.classList.remove('minimizing'); dock(w); w.classList.add('minimized'); updateCount(); },reduced?0:280); }
@@ -1074,7 +1070,7 @@ Lavoro:  <a href="https://pezzanera.it/" target="_blank" rel="noopener">pezzaner
         else if(act==='max'){ openModal(w); } });
       if(el.classList.contains('shot')) el.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); openModal(w);} });
     });
-    if(fine && !reduced){ w.addEventListener('mousemove',function(e){ if(w.classList.contains('floating')||w.classList.contains('dragging')) return; var r=w.getBoundingClientRect(); var x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5; w.style.transform='perspective(900px) rotateX('+(-y*5).toFixed(2)+'deg) rotateY('+(x*5).toFixed(2)+'deg) translate(-1px,-1px)'; }); w.addEventListener('mouseleave',function(){ if(!w.classList.contains('dragging')) w.style.transform=''; }); }
+    
     makeDraggable(w,false);
   });
   makeDraggable($('#player'),true);
