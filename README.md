@@ -2,7 +2,7 @@
 
 Il sito vetrina di Max Cacace, developer in Umbria: un desktop finto in stile Windows 98, con l'estetica vaporwave di fine anni '90 e una finestra per ogni progetto.
 
-**→ [maxbuildthings.com](https://maxbuildthings.com)**
+**→ [maxbuildthings.vercel.app](https://maxbuildthings.vercel.app)**
 
 ![anteprima](og.jpg)
 

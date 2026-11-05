@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://maxbuildthings.com/sitemap.xml
+Sitemap: https://maxbuildthings.vercel.app/sitemap.xml
