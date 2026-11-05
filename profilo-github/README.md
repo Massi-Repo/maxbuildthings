@@ -1,4 +1,4 @@
-### Ciao, sono Max 👾
+### Ciao, sono Max Cacace 👾
 
 Tecnico e developer a Marsciano (PG). Faccio siti, web app e strumenti che fanno risparmiare giri a vuoto. Ho una laurea in psicologia, poi è arrivato il codice: mi interessa più chi usa la cosa che la cosa.
 
