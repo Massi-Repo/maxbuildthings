@@ -7,7 +7,7 @@ Il sito vetrina di Max Cacace, developer in Umbria: un desktop finto in stile Wi
 ![anteprima](og.jpg)
 
 ## Cosa c'è dentro
-- Una pagina sola (`index.html`), con CSS e JS scritti a mano e gli screenshot incorporati. Niente framework e niente build.
+- Una pagina sola (`index.html`), con CSS, JS e screenshot tutti dentro. Niente framework e niente build.
 - Una scena WebGL di oggetti cromati con bloom, fatta con Three.js r128.
 - Un player lo-fi generativo con la Web Audio API: tre tracce originali sintetizzate nel browser, e i visual che reagiscono all'audio.
 - Finestre che si trascinano, si riducono a icona e si chiudono, con la barra delle applicazioni e il menu Avvio. Ci sono anche la schermata BIOS, lo screensaver e qualche easter egg (prova il Konami code).
