@@ -6,13 +6,14 @@ import { pathToFileURL } from 'node:url';
 import { resolve } from 'node:path';
 import { mkdirSync } from 'node:fs';
 
-const url = pathToFileURL(resolve('index.html')).href;
+// ?gl=forza: la scena 3D parte anche senza scheda grafica (Chromium senza schermo); in italiano, come la vede chi riceve il link
+const url = pathToFileURL(resolve('index.html')).href + '?gl=forza';
 mkdirSync('screenshot', { recursive: true });
 const browser = await chromium.launch();
 
 async function scatta(viewport, file, scale = 1) {
-  const ctx = await browser.newContext({ viewport, deviceScaleFactor: scale });
-  await ctx.addInitScript(() => { sessionStorage.setItem('booted', '1'); sessionStorage.setItem('dlg', '1'); });
+  const ctx = await browser.newContext({ viewport, deviceScaleFactor: scale, locale: 'it-IT' });
+  await ctx.addInitScript(() => { sessionStorage.setItem('booted', '1'); });
   const page = await ctx.newPage();
   const errori = [];
   page.on('pageerror', e => errori.push(e.message));

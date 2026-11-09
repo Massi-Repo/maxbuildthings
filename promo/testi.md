@@ -20,7 +20,7 @@ Ho fatto il mio sito come se fosse il 1998. Se ti serve un sito o un'app (più m
 ## LinkedIn (video-orizzontale.mp4)
 Il mio portfolio è un Windows 98 che non è mai esistito.
 
-Le finestre si trascinano, c'è il BIOS all'avvio, un player lo-fi che genera la musica mentre l'ascolti e un Konami code nascosto. Dentro ci sono i siti e le app che ho costruito negli ultimi anni.
+Le finestre si trascinano e si riducono a icona, dietro girano oggetti cromati in 3D. Dentro ci sono i siti e le app che ho costruito, e i prodotti che vendo.
 
 Tutto in una pagina sola: niente framework, niente cookie.
 
@@ -32,4 +32,4 @@ https://maxbuildthings.vercel.app
 Faccio siti web, app e strumenti su misura per attività e ristoranti in Umbria, dall'idea alla messa online: veloci sul telefono, senza cookie. Mi scrivi e rispondo io, non un modulo. Guarda i lavori su maxbuildthings.vercel.app.
 
 ## Reddit, r/webdev (Showoff Saturday), in inglese: più avanti
-I rebuilt my portfolio as a fake Windows 98 desktop: draggable windows, BIOS boot, a generative lo-fi player written with Web Audio, all in one HTML file with no framework. Link: https://maxbuildthings.vercel.app/?lang=en
+I rebuilt my portfolio as a fake Windows 98 desktop: draggable windows over a WebGL scene of chrome objects, all in one HTML file with no framework. Link: https://maxbuildthings.vercel.app/?lang=en
