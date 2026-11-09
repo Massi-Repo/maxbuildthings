@@ -263,6 +263,17 @@ body.aesthetic .page,body.aesthetic .scene,body.aesthetic .kata{animation:hue 5s
 .loading .pbar i{animation:load .42s steps(10) forwards;width:0}
 @keyframes load{to{width:100%}}
 
+.contatti,.pacchetti{max-width:46em;margin:34px auto 0;padding:16px 18px;background:rgba(7,2,26,.78);border:2px solid var(--violet);color:var(--fg);font-size:15px;line-height:1.55}
+.contatti h2,.pacchetti h2{font:26px/1.1 var(--font-pixel);color:var(--gold);margin:0 0 8px;letter-spacing:.04em}
+.contatti p,.pacchetti p{margin:6px 0}.contatti b,.pacchetti b{color:var(--gold)}
+.contatti .btn-mail{display:block;margin:14px 0 4px;padding:16px 12px 14px;text-align:center;font:24px/1.1 var(--font-pixel);letter-spacing:.05em;color:var(--bg-deep);background:var(--green);text-decoration:none;box-shadow:inset -2px -2px rgba(0,0,0,.35),inset 2px 2px rgba(255,255,255,.55),0 0 18px rgba(57,255,138,.5);overflow-wrap:anywhere}
+.contatti .btn-mail:hover,.contatti .btn-mail:focus-visible{background:var(--cyan)}
+.contatti small{display:block;color:var(--muted);text-align:center}
+.pacchetti[hidden]{display:none}
+.pk{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:12px}
+.pk>div{padding:12px;border:1px solid var(--violet);background:rgba(20,5,54,.8)}
+.pk h3{font:22px/1.1 var(--font-pixel);color:var(--cyan);margin:0 0 4px}.pk .pr{font:24px/1 var(--font-pixel);color:var(--gold);margin:4px 0 8px}
+.pk ul{margin:0;padding-left:1.1em}.pk li{margin:3px 0}
 .counter{display:flex;align-items:center;gap:10px;justify-content:center;margin-top:34px;font:18px/1 var(--font-pixel);color:var(--muted)}
 .odo{display:inline-flex;gap:2px}
 .odo i{font:22px/1.1 var(--font-pixel);font-style:normal;color:var(--green);background:#000;padding:2px 5px;border:1px solid #333;text-shadow:0 0 6px var(--green);min-width:1em;text-align:center;font-variant-numeric:tabular-nums}
@@ -739,6 +750,19 @@ Lavoro:  <a href="https://pezzanera.it/" target="_blank" rel="noopener">pezzaner
     'progetti':'projects', 'e siti':'& sites', "ti serve un sito o un'app?":'need a website or an app?', 'scrivimi':'email me',
     'mailto:massi.cc@proton.me?subject=Ciao%20Max%2C%20ho%20visto%20maxbuildthings':'mailto:massi.cc@proton.me?subject=Hi%20Max%2C%20I%20saw%20maxbuildthings',
     '★ INCASSA — IN SVILUPPO':'★ INCASSA — IN DEVELOPMENT',
+    // contatti e pacchetti
+    'Ti serve un sito?':'Need a website?',
+    'Faccio siti, menu digitali con QR e piccole web app per negozi, ristoranti e attività. Si leggono bene dal telefono, si aggiornano facilmente, niente cookie.':'I make websites, QR digital menus and small web apps for shops, restaurants and small businesses. They read well on a phone, are easy to update, and use no cookies.',
+    'Scrivimi due righe su cosa fai e cosa ti serve. Rispondo io, non un modulo.':"Send me a couple of lines about what you do and what you need. I reply myself, there's no form.",
+    '✉ scrivi a massi.cc@proton.me':'✉ email massi.cc@proton.me',
+    'un tocco: si apre la posta, con un testo già pronto da completare':'one tap: your mail app opens with a ready-made text to complete',
+        'Tre modi per cominciare':'Three ways to start','Prezzi indicativi, IVA esclusa se dovuta. Il preventivo vero lo faccio dopo averti ascoltato.':'Indicative prices, VAT excluded where due. I give the real quote after listening to you.',
+    'Sito vetrina':'Brochure website','Menu digitale con QR':'QR digital menu','Piccola web app':'Small web app',
+    'da 600 €':'from €600','da 350 €':'from €350','da 2.000 €':'from €2,000',
+    'fino a 5 pagine':'up to 5 pages','bello da telefono':'great on a phone','mappa, orari, contatti':'map, opening hours, contacts','messa online inclusa':'going live included',
+    'menu che aggiorni tu':'a menu you update yourself','QR pronto da stampare':'QR ready to print','allergeni e piatti del giorno':'allergens and dishes of the day',
+    'uno strumento su misura per il tuo lavoro':'a custom tool for your work','prenotazioni, ordini, gestione':'bookings, orders, management','preventivo dopo il colloquio':'quote after we talk',
+    'mailto:massi.cc@proton.me?subject=Vorrei%20un%20sito%20o%20un%27app&body=Ciao%20Max%2C%20mi%20chiamo%20...%20e%20ho%20...%20(attivit%C3%A0).%20Mi%20serve%20...':'mailto:massi.cc@proton.me?subject=I%20need%20a%20website%20or%20an%20app&body=Hi%20Max%2C%20my%20name%20is%20...%20and%20I%20run%20...%20(my%20business).%20I%20need%20...',
     // barra dei filtri e cartelle
     'Filtri':'Filters', 'Visualizza:':'View:', 'Tutto':'All', 'App e software':'Apps & software', 'Siti web':'Websites', 'Percorso:':'Address:',
     'C:\\MAX\\PROGETTI':'C:\\MAX\\PROJECTS', 'Progetti online':'Live projects', 'Cartella in lavorazione':'Work in progress folder',
@@ -1156,6 +1180,10 @@ Lavoro:  <a href="https://pezzanera.it/" target="_blank" rel="noopener">pezzaner
 })();
 </script>
 
+<script>
+/* INTERRUTTORE pacchetti: spento finche' Max non approva prezzi e testi. Per accenderlo: PACCHETTI_ACCESI = true. In locale si vede con ?pacchetti=1 */
+(function(){var PACCHETTI_ACCESI=false;var p=document.getElementById('pacchetti');if(p&&(PACCHETTI_ACCESI||(location.hostname==='localhost'&&/pacchetti=1/.test(location.search))))p.hidden=false})();
+</script>
 <script>
 document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[href^=\"mailto:\"]");if(!a||!navigator.clipboard)return;navigator.clipboard.writeText(a.href.slice(7).split("?")[0]).then(function(){if(!a.dataset.orig)a.dataset.orig=a.innerHTML;a.textContent=window.L?L.t("✓ copiato"):"✓ copiato";clearTimeout(a._t);a._t=setTimeout(function(){a.innerHTML=a.dataset.orig;delete a.dataset.orig},2600)},function(){})});
 </script>
