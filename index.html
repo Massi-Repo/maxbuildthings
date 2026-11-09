@@ -386,18 +386,6 @@ body.aesthetic .page,body.aesthetic .scene,body.aesthetic .kata{animation:hue 5s
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="rgb" x="-2%" width="104%"><feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="r"/><feOffset in="r" dx="-5" dy="0" result="ro"/><feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0" result="g"/><feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" result="b"/><feOffset in="b" dx="5" dy="0" result="bo"/><feBlend in="ro" in2="g" mode="screen" result="rg"/><feBlend in="rg" in2="bo" mode="screen"/></filter></svg>
 
-<div class="boot" id="boot" hidden>
-  <p>MAXBIOS (C) 1996-2026 · maxbuildthings.com</p>
-  <p>Memoria: 640K <span class="ok">OK</span> (abbastanza per chiunque)</p>
-  <p>Rilevo progetti........ <span class="ok">11 trovati</span></p>
-  <p>Carico vaporwave.sys... <span class="ok">OK</span></p>
-  <p>Carico maxamp.drv...... <span class="ok">OK</span></p>
-  <p>Carico vaporgl.dll..... <span class="ok">OK</span> (bloom attivo)</p>
-  <p>Avvio MAXBUILDTHINGS.EXE_</p>
-  <span class="skip">clicca per saltare</span>
-</div>
-<script>try{if(sessionStorage.getItem("booted")!=="1"&&!matchMedia("(prefers-reduced-motion: reduce)").matches)document.getElementById("boot").hidden=false}catch(e){}</script>
-
 <div class="scene" id="scene" aria-hidden="true">
   <canvas id="gl"></canvas>
   <canvas id="stars"></canvas>
@@ -445,7 +433,7 @@ body.aesthetic .page,body.aesthetic .scene,body.aesthetic .kata{animation:hue 5s
           <button class="btn" type="button" data-filter="sito" aria-pressed="false">Siti web</button>
         </div>
         <div class="path"><small>Percorso:</small> C:\MAX\PROGETTI</div>
-        <div id="count">11 oggetti</div>
+        <div id="count">10 oggetti</div>
       </div>
 
       <section class="grid" id="grid" aria-label="Progetti online">
@@ -551,21 +539,6 @@ body.aesthetic .page,body.aesthetic .scene,body.aesthetic .kata{animation:hue 5s
             <dl class="meta"><dt>Stack</dt><dd>HTML statico · marchio Pezzanera</dd><dt>Dal</dt><dd>2026</dd></dl>
             <div class="actions"><a class="btn primary" href="https://reteveloce.it/" target="_blank" rel="noopener">Apri ↗</a></div>
             <div class="status"><span><i class="led live"></i>LIVE</span><span>Pezzanera</span></div>
-          </div>
-        </article>
-
-        <article class="win dragable" id="laboratorio" data-type="app" data-title="laboratorio.exe">
-          <div class="bar"><span class="ttl">laboratorio<i>.exe</i></span><button class="wbtn" type="button" data-act="min" aria-label="Riduci a icona">_</button><button class="wbtn" type="button" data-act="max" aria-label="Ingrandisci">□</button><button class="wbtn" type="button" data-act="close" aria-label="Chiudi">×</button></div>
-          <div class="body">
-            <h2>Strumenti interni <small>(niente link, girano in ufficio)</small></h2>
-            <div class="list">
-              <div class="row"><span class="ico">▣</span><div><b>AYCEflow</b><span>Ordinazione dal tavolo per i ristoranti all-you-can-eat: le comande entrano dritte nel software di cassa e finiscono in cucina.</span></div></div>
-              <div class="row"><span class="ico">◉</span><div><b>Monitor RT</b><span>Controlla da solo lo stato di fiscalizzazione di centinaia di registratori telematici sul portale dell'Agenzia delle Entrate e lo riporta nel CRM.</span></div></div>
-              <div class="row"><span class="ico">⚙</span><div><b>ESCPOS WIFI BOSS</b><span>Trova le stampanti comande in rete e cambia loro IP, Wi-Fi e password, anche quando il tool del produttore si arrende.</span></div></div>
-              <div class="row"><span class="ico">✦</span><div><b>RolAi</b><span>Assistente AI per il team: risponde su clienti, ticket e procedure interne pescando dal CRM e dalla base di conoscenza.</span></div></div>
-            </div>
-            <dl class="meta"><dt>Stack</dt><dd>Python · Node · Supabase · un po' di tutto</dd></dl>
-            <div class="status"><span><i class="led live"></i>IN USO</span><span>Pezzanera</span></div>
           </div>
         </article>
 
@@ -687,7 +660,6 @@ Lavoro:  <a href="https://pezzanera.it/" target="_blank" rel="noopener">pezzaner
     <li class="sep"></li>
     <li><button type="button" id="restoreAll"><span class="ico">▣</span>Riapri e riordina le finestre</button></li>
     <li><button type="button" id="saverBtn"><span class="ico">✶</span>Screensaver</button></li>
-    <li><button type="button" id="rebootBtn"><span class="ico">↻</span>Riavvia…</button></li>
     <li><button type="button" id="shutdownBtn"><span class="ico">⏻</span>Spegni…</button></li>
   </ul>
 </nav>
@@ -719,14 +691,6 @@ Lavoro:  <a href="https://pezzanera.it/" target="_blank" rel="noopener">pezzaner
     <div class="lcd"><div class="lcdtop"><span id="ptrack">01 · scrivania.mod</span><span id="ptime">00:00</span></div><canvas id="pvis" width="260" height="44" aria-hidden="true"></canvas><div class="lcdbottom"><span id="pbpm">72 BPM</span><span id="pchord">—</span><span>44 kHz · ∞</span></div></div>
     <div class="pbtns"><button class="btn" type="button" data-player="prev" aria-label="Traccia precedente">|◀</button><button class="btn primary" type="button" data-player="toggle" id="ptoggle" aria-label="Play/Stop">▶</button><button class="btn" type="button" data-player="next" aria-label="Traccia successiva">▶|</button></div>
     <ol class="plist" id="plist"></ol>
-  </div>
-</div>
-
-<div class="win dlg" id="dlg" hidden role="dialog" aria-labelledby="dlgT">
-  <div class="bar active"><span class="ttl" id="dlgT">maxbuildthings.com</span><button class="wbtn" type="button" data-dlg="ok" aria-label="Chiudi">×</button></div>
-  <div class="body dlgbody">
-    <div class="dlgrow"><span class="dlgico">i</span><p>Questo sito è ottimizzato per 800×600 e Netscape Navigator 4.0. Continuare comunque?</p></div>
-    <div class="dlgbtns"><button class="btn primary" type="button" data-dlg="ok">OK</button><button class="btn" type="button" data-dlg="no">Annulla</button></div>
   </div>
 </div>
 
@@ -962,17 +926,16 @@ Lavoro:  <a href="https://pezzanera.it/" target="_blank" rel="noopener">pezzaner
   $$('[data-player-open]').forEach(function(b){ b.addEventListener('click',function(){ $('#player').hidden=false; closeStart(); }); });
   ampUI();
 
-  /* ---------- boot, sweep, cascade ---------- */
-  var boot=$('#boot'), seen=false;
+  /* ---------- avvio: riga luminosa e finestre a cascata (solo la prima volta nella sessione) ---------- */
+  var seen=false;
   try{ seen=sessionStorage.getItem('booted')==='1'; }catch(e){}
   function sweep(){ if(reduced) return; var s=document.createElement('div'); s.className='sweep'; document.body.appendChild(s); setTimeout(function(){ s.remove(); },1300); }
   function cascade(){ if(reduced) return; $$('.grid').forEach(function(g){ $$('.win',g).forEach(function(w,i){ w.style.setProperty('--i',i); }); g.classList.add('cascade'); }); setTimeout(function(){ $$('.grid').forEach(function(g){ g.classList.remove('cascade'); }); },1600); }
-  function endBoot(){ boot.classList.add('out'); setTimeout(function(){ boot.hidden=true; },400); try{ sessionStorage.setItem('booted','1'); }catch(e){} typePrompt(); sweep(); cascade(); }
-  if(!seen && !reduced){ boot.hidden=false; var bt=setTimeout(endBoot,2200); boot.addEventListener('click',function(){clearTimeout(bt);endBoot();}); document.addEventListener('keydown',function k(){clearTimeout(bt);endBoot();document.removeEventListener('keydown',k);}); }
-  else typePrompt();
+  if(!seen){ try{ sessionStorage.setItem('booted','1'); }catch(e){} sweep(); cascade(); }
 
   var typed=false;
   function typePrompt(){ if(typed||reduced) return; typed=true; var el=$('#prompt'), full='C:\\> maxbuildthings.exe', i=0; el.textContent=''; (function tk(){ el.textContent=full.slice(0,++i); if(i<full.length) setTimeout(tk,45); })(); }
+  typePrompt();
   /* ---------- animazioni fuori schermo in pausa ---------- */
   // le animazioni CSS infinite fuori dalla vista non devono costare niente: .fuori le mette in pausa (vedi CSS)
   var visibile=function(){ return true; };
@@ -1151,16 +1114,10 @@ Lavoro:  <a href="https://pezzanera.it/" target="_blank" rel="noopener">pezzaner
   var sceneEl=$('#scene'); function setFloor(v){ sceneEl.classList.remove('checker','nofloor'); if(v!=='grid') sceneEl.classList.add(v); GL.floor=v==='grid'?0:(v==='checker'?1:2); $$('[data-mark]',cm).forEach(function(m){ m.textContent=m.dataset.mark===v?'●':'○'; }); try{ localStorage.setItem('floor',v); }catch(e){} }
   try{ var fv=localStorage.getItem('floor'); if(fv) setFloor(fv); }catch(e){}
   $$('[data-ctx]',cm).forEach(function(b){ b.addEventListener('click',function(){ var a=b.dataset.ctx; closeCtx(); beep(640,.05); if(a==='refresh') location.reload(); else if(a==='floor') setFloor(b.dataset.v); else if(a==='aesthetic') aesthetic(); else if(a==='saver'){ clearTimeout(idleT); setTimeout(startSaver,50); } else if(a==='player'){ $('#player').hidden=false; } }); });
-  $('#rebootBtn').addEventListener('click',function(){ closeStart(); try{ sessionStorage.removeItem('booted'); }catch(e){} typed=false; boot.classList.remove('out'); boot.hidden=false; window.scrollTo(0,0); setTimeout(endBoot,2200); });
   var sd=$('#shutdown');
   function shutdown(){ beep(440,.3,'sawtooth'); if(A.on) ampStop(); sd.hidden=false; }
   $('#shutdownBtn').addEventListener('click',function(){ closeStart(); shutdown(); });
   sd.addEventListener('click',function(){ sd.hidden=true; chime(); });
-
-  /* ---------- fake system dialog (once per session) ---------- */
-  var dlg=$('#dlg'), dlgSeen=false; try{ dlgSeen=sessionStorage.getItem('dlg')==='1'; }catch(e){}
-  if(!dlgSeen){ setTimeout(function(){ if(overlay.hidden && sd.hidden){ dlg.hidden=false; beep(330,.15,'triangle'); try{ sessionStorage.setItem('dlg','1'); }catch(e){} } },16000); }
-  $$('[data-dlg]',dlg).forEach(function(b){ b.addEventListener('click',function(){ dlg.hidden=true; beep(660,.05); if(b.dataset.dlg==='no') shutdown(); }); });
 
   /* ---------- konami: aesthetic mode ---------- */
   function aesthetic(){ document.body.classList.toggle('aesthetic'); chime(); spark(innerWidth/2,innerHeight/2,160,true); tracking(); }
