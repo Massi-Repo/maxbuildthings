@@ -268,7 +268,7 @@ body.aesthetic .page,body.aesthetic .scene,body.aesthetic .kata{animation:hue 5s
 .contatti p,.pacchetti p{margin:6px 0}.contatti b,.pacchetti b{color:var(--gold)}
 .contatti .btn-mail{display:block;margin:14px 0 4px;padding:16px 12px 14px;text-align:center;font:24px/1.1 var(--font-pixel);letter-spacing:.05em;color:var(--bg-deep);background:var(--green);text-decoration:none;box-shadow:inset -2px -2px rgba(0,0,0,.35),inset 2px 2px rgba(255,255,255,.55),0 0 18px rgba(57,255,138,.5);overflow-wrap:anywhere}
 .contatti .btn-mail:hover,.contatti .btn-mail:focus-visible{background:var(--cyan)}
-.contatti small{display:block;color:var(--muted);text-align:center}
+.contatti small{display:block;color:var(--fg);opacity:.85;text-align:center;margin-top:8px;padding-bottom:4px;font-size:14px}
 .pacchetti[hidden]{display:none}
 .pk{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:12px}
 .pk>div{padding:12px;border:1px solid var(--violet);background:rgba(20,5,54,.8)}
@@ -638,6 +638,24 @@ Lavoro:  <a href="https://pezzanera.it/" target="_blank" rel="noopener">pezzaner
           <span>マックスは物を作る</span><span class="c">ＯＵＴＲＵＮ　ＭＯＤＥ</span><span>ＶＡＰＯＲＷＡＶＥ　ＩＴＡＬＩＡ</span><span class="c">ＴＡＳＴＯ　ＤＥＳＴＲＯ　＝　ＯＰＺＩＯＮＩ</span><span>ＭＡＲＳＣＩＡＮＯ　（ＰＧ）</span><span class="c">ＶＨＳ　ＳＰ　∞</span><span>ＰＲＥＭＩ　▶　ＰＥＲ　ＬＡ　ＭＵＳＩＣＡ</span>
         </div>
       </div>
+
+      <section class="contatti" id="contatti" aria-label="Contatti">
+        <h2>Ti serve un sito?</h2>
+        <p>Faccio siti, menu digitali con QR e piccole web app per negozi, ristoranti e attività. Si leggono bene dal telefono, si aggiornano facilmente, niente cookie.</p>
+        <p>Scrivimi due righe su cosa fai e cosa ti serve. Rispondo io, non un modulo.</p>
+        <a class="btn-mail" href="mailto:massi.cc@proton.me?subject=Vorrei%20un%20sito%20o%20un%27app&body=Ciao%20Max%2C%20mi%20chiamo%20...%20e%20ho%20...%20(attivit%C3%A0).%20Mi%20serve%20...">✉ scrivi a massi.cc@proton.me</a>
+        <small>un tocco: si apre la posta, con un testo già pronto da completare</small>
+      </section>
+
+      <section class="pacchetti" id="pacchetti" aria-label="Pacchetti" hidden>
+        <h2>Tre modi per cominciare</h2>
+        <p>Prezzi indicativi, IVA esclusa se dovuta. Il preventivo vero lo faccio dopo averti ascoltato.</p>
+        <div class="pk">
+          <div><h3>Sito vetrina</h3><p class="pr">da 600 €</p><ul><li>fino a 5 pagine</li><li>bello da telefono</li><li>mappa, orari, contatti</li><li>messa online inclusa</li></ul></div>
+          <div><h3>Menu digitale con QR</h3><p class="pr">da 350 €</p><ul><li>menu che aggiorni tu</li><li>QR pronto da stampare</li><li>allergeni e piatti del giorno</li></ul></div>
+          <div><h3>Piccola web app</h3><p class="pr">da 2.000 €</p><ul><li>uno strumento su misura per il tuo lavoro</li><li>prenotazioni, ordini, gestione</li><li>preventivo dopo il colloquio</li></ul></div>
+        </div>
+      </section>
 
       <div class="counter" aria-live="polite"><span>Sei stato qui</span><span class="odo" id="odo"><i>0</i><i>0</i><i>0</i><i>1</i></span><span id="odolbl">volta</span></div>
       <div class="badges">
